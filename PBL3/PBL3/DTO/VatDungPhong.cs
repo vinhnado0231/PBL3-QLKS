@@ -14,8 +14,11 @@ namespace PBL3.DTO
         public string IdVatDung { get; set; } 
         [StringLength(10), Required]
         public string IdPhong { get; set; }
+        [StringLength(10), Required]
+        public string IdLoaiVatDung { get; set; }
         [Required]
         public int SoLuongBanDau { get; set; }
+        [ForeignKey("IDLoaiVatDung")]
         public virtual LoaiVatDung LoaiVatDung { get; set; }
         [ForeignKey("IdPhong")]
         public virtual Phong Phong { get; set; }

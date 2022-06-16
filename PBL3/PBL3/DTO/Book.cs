@@ -14,10 +14,6 @@ namespace PBL3.DTO
         public string IdKhachHang { get; set; }
         [Required, StringLength(10)]
         public string IdNhanVien { get; set; }
-        [Required]
-        public DateTime NgayDatPhong { get; set; }
-        [Required]
-        public DateTime NgayThanhToan { get; set; }
         public int TienCoc { get; set; }
         [ForeignKey("IdKhachHang")]
         public virtual KhachHang KhachHang { get; set; }

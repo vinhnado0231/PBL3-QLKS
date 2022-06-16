@@ -10,19 +10,39 @@ namespace PBL3.DTO
 {
     public class NhanVien
     {
-
+        public NhanVien()
+        {
+            this.ChiTietThuePhongs = new HashSet<ChiTietThuePhong>();
+            this.LichSuDangNhaps = new HashSet<LichSuDangNhap>();
+            this.HoaDons = new HashSet<HoaDon>();
+            this.Books = new HashSet<Book>();
+        }
+        [Key, StringLength(10), Required]
         public string IdNhanVien { get; set; }
-
+        [StringLength(50), Required]
         public string Username { get; set; }
+        [StringLength(10), Required]
         public string IdChucVu { get; set; }
-        public string Ten { get; set; }   
+        [Required]
+        public string Ten { get; set; }
+        [Required]
         public bool GioiTinh { get; set; }
-        
+        [Required]
         public string CMND { get; set; }
-       
+        [Required]
         public string SDT { get; set; }
+        [Required]
         public string DiaChi { get; set; }
+        [Required]
         public DateTime NgayVaoLam { get; set; }
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
+        [ForeignKey("IdChucVu")]
+        public virtual ChucVu ChucVu { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
+        public virtual ICollection<ChiTietThuePhong> ChiTietThuePhongs { get; set; }
+        [ForeignKey("Username")]
+        public virtual TaiKhoan TaiKhoan { get; set; }
+        public virtual ICollection<LichSuDangNhap> LichSuDangNhaps { get; set; }
 
     }
 }

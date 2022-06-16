@@ -9,10 +9,16 @@ namespace PBL3.DTO
 {
     public class LoaiPhong
     {
-
+        public LoaiPhong()
+        {
+            this.Phongs = new HashSet<Phong>();
+        }
+        [Key, StringLength(10), Required]
         public string IdLoaiPhong { get; set; }
+        [Required]
         public string TenLoaiPhong { get; set; }
-
+        [Required]
         public string SoNguoiToiDa { get; set; }
+        public virtual ICollection<Phong> Phongs { get; set; }
     }
 }

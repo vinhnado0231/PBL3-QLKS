@@ -8,16 +8,17 @@ using System.Threading.Tasks;
 
 namespace PBL3.DTO
 {
-    public class VatDungPhong
+    public class LichSuDangNhap
     {
         [Key, StringLength(10), Required]
-        public string IdVatDung { get; set; } 
+        public string IDLichSu { get; set; }
         [StringLength(10), Required]
-        public string IdPhong { get; set; }
+        public string IDNhanVien { get; set; }
         [Required]
-        public int SoLuongBanDau { get; set; }
-        public virtual LoaiVatDung LoaiVatDung { get; set; }
-        [ForeignKey("IdPhong")]
-        public virtual Phong Phong { get; set; }
+        public DateTime ThoiGian { get; set; }
+        [Required]
+        public bool TrangThai { get; set; }
+        [ForeignKey("IDNhanVien")]
+        public virtual NhanVien NhanVien { get; set; }
     }
 }

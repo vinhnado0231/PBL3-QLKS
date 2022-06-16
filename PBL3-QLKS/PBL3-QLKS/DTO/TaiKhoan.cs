@@ -8,7 +8,7 @@ namespace PBL3_QLKS.DTO
 {
     public class TaiKhoan
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string Username1 { get; set; }
+        public string Password1 { get; set; }
     }
 }

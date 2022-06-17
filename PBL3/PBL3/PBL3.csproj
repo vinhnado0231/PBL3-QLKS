@@ -98,6 +98,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\QLHoaDon_BLL.cs" />
+    <Compile Include="BLL\ThanhToanHoaDon_BLL.cs" />
     <Compile Include="DAL\CreateDB.cs" />
     <Compile Include="DAL\QLKS.cs" />
     <Compile Include="DTOVIEW\CBBItem.cs" />
@@ -159,11 +161,23 @@
     <Compile Include="VIEW\formPrintBill.designer.cs">
       <DependentUpon>formPrintBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\formQLHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\formQLHoaDon.Designer.cs">
+      <DependentUpon>formQLHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\formThanhToanDatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\formThanhToanDatPhong.designer.cs">
       <DependentUpon>formThanhToanDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\formThanhToanHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\formThanhToanHoaDon.Designer.cs">
+      <DependentUpon>formThanhToanHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\formThuePhongcs.cs">
       <SubType>Form</SubType>
@@ -221,8 +235,14 @@
     <EmbeddedResource Include="VIEW\formPrintBill.resx">
       <DependentUpon>formPrintBill.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\formQLHoaDon.resx">
+      <DependentUpon>formQLHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\formThanhToanDatPhong.resx">
       <DependentUpon>formThanhToanDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\formThanhToanHoaDon.resx">
+      <DependentUpon>formThanhToanHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\formThuePhongcs.resx">
       <DependentUpon>formThuePhongcs.cs</DependentUpon>
@@ -266,8 +286,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

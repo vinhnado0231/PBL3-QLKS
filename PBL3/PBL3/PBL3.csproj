@@ -109,11 +109,13 @@
     <Compile Include="DTO\Book.cs" />
     <Compile Include="DTO\ChiTietBook.cs" />
     <Compile Include="DTO\ChiTietSuDungDichVu.cs" />
+    <Compile Include="DTO\ChiTietThuePhong.cs" />
     <Compile Include="DTO\ChucVu.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LamHu.cs" />
     <Compile Include="DTO\DichVu.cs" />
+    <Compile Include="DTO\LichSuDangNhap.cs" />
     <Compile Include="DTO\LoaiPhong.cs" />
     <Compile Include="DTO\LoaiVatDung.cs" />
     <Compile Include="DTO\NhanVien.cs" />

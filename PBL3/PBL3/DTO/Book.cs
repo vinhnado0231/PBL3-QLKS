@@ -7,6 +7,10 @@ namespace PBL3.DTO
 {
     public class Book
     {
+        public Book()
+        {
+            this.ChiTietBooks = new HashSet<ChiTietBook>();
+        }
 
         [Key, StringLength(10), Required]
         public string IdBook { get; set; }
@@ -17,7 +21,7 @@ namespace PBL3.DTO
         public int TienCoc { get; set; }
         [ForeignKey("IdKhachHang")]
         public virtual KhachHang KhachHang { get; set; }
-        public virtual ChiTietBook ChiTietBook { get; set; }
+        public virtual ICollection<ChiTietBook> ChiTietBooks { get; set; }
         [ForeignKey("IdNhanVien")]
         public virtual NhanVien NhanVien { get; set; }
 

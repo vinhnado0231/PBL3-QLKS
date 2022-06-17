@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3.DAL;
 
 namespace PBL3
 {
@@ -21,12 +22,13 @@ namespace PBL3
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
-
+        
+        QLKS qlks = new QLKS();
         public _mainForm()
         {
             InitializeComponent();
             InitGUI();
- 
+            qlks.Phongs.Select(p => p);
         }
         public void InitGUI()
         {
@@ -387,6 +389,7 @@ namespace PBL3
         {
             dropMenuQuanLi.IsMainMenu = true;
             PanelButQuanLi.Visible =false;
+
 
         }
 

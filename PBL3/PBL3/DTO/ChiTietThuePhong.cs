@@ -11,21 +11,23 @@ namespace PBL3.DTO
     public class ChiTietThuePhong
     {
         [Key, StringLength(10), Required]
+        public string IdChiTietThuePhong { get; set; }
+        [StringLength(10), Required]
         public string IDHoaDon { get; set; }
         [StringLength(10), Required]
         public string IDPhong { get; set; }
-        [StringLength(10), Required]
-        public string IDNhanVien { get; set; }
+        //[StringLength(10), Required]
+        //public string IdNhanVien { get; set; }
         [Required]
-        public DateTime NgayCheckIn { get; set; }
+        public Nullable<DateTime> NgayCheckIn { get; set; }
         [Required]
-        public DateTime NgayCheckOut { get; set; }
+        public Nullable<DateTime> NgayCheckOut { get; set; }
         [ForeignKey("IDHoaDon")]
         public virtual HoaDon HoaDon { get; set; }
         [ForeignKey("IDPhong")]
         public virtual Phong Phong { get; set; }
-        [ForeignKey("IDNhanVien")]
-        public virtual NhanVien NhanVien { get; set; }
+        //[ForeignKey("IdNhanVien")]
+        //public virtual NhanVien NhanVien { get; set; }
 
     }
 }

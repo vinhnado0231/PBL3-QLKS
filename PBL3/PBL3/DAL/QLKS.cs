@@ -14,7 +14,7 @@ namespace PBL3.DAL
             Database.SetInitializer<QLKS>(new CreateDB());
         }
         public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<ChiTietBook> BookDetails { get; set; }
+        public virtual DbSet<ChiTietBook> ChiTietBooks { get; set; }
         public virtual DbSet<ChiTietSuDungDichVu> ChiTietSuDungDichVus { get; set; }
         public virtual DbSet<ChucVu> ChucVus { get; set; }
         public virtual DbSet<DichVu> DichVus { get; set; }
@@ -28,9 +28,6 @@ namespace PBL3.DAL
         public virtual DbSet<ChiTietThuePhong> ChiTietThuePhongs { get; set; }
         public virtual DbSet<LichSuDangNhap> LichSuDangNhaps { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public virtual DbSet<ChiTietBook> ChiTietBooks { get; set; }
-
-        public virtual DbSet<TrangThaiVatDung> TrangThaiVatDungs { get; set; }
         public virtual DbSet<VatDungPhong> VatDungPhongs { get; set; }
     }
 

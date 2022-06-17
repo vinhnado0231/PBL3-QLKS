@@ -12,7 +12,7 @@ namespace PBL3.DTO
     {
         public HoaDon()
         {
-            this.LamHus = new HashSet<LamHu>();
+           //this.LamHus = new HashSet<LamHu>();
             this.ChiTietThuePhongs = new HashSet<ChiTietThuePhong>();
             this.ChiTietSuDungDichVus = new HashSet<ChiTietSuDungDichVu>();
         }
@@ -23,7 +23,7 @@ namespace PBL3.DTO
         [StringLength(10), Required]
         public string IDNhanVien { get; set; }
         [Required]
-        public DateTime NgayHoaDon { get; set; }
+        public Nullable<DateTime> NgayHoaDon { get; set; }
         [Required]
         public bool TinhTrang { get; set; }
         public string GhiChu { get; set; }
@@ -33,7 +33,7 @@ namespace PBL3.DTO
         public virtual KhachHang KhachHang { get; set; }
         [ForeignKey("IDNhanVien")]
         public virtual NhanVien NhanVien { get; set; }
-        public virtual ICollection<LamHu> LamHus { get; set; } 
+        //public virtual ICollection<LamHu> LamHus { get; set; } 
         public virtual ICollection<ChiTietThuePhong> ChiTietThuePhongs { get; set; }    
         public virtual ICollection<ChiTietSuDungDichVu> ChiTietSuDungDichVus { get; set; }
 

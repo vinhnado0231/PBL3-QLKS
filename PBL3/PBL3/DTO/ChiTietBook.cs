@@ -14,11 +14,13 @@ namespace PBL3.DTO
         [StringLength(10), Required]
         public string IdPhong { get; set; }
         [Key, StringLength(10), Required]
+        public string IdChiTietBook { get; set; }
+        [StringLength(10), Required]
         public string IdBook { get; set; }
         [Required]
-        public DateTime NgayCheckInPhong { get; set; }
-
-        public DateTime NgayCheckOut { get; set; }
+        public Nullable<DateTime> NgayCheckInPhong { get; set; }
+        
+        public Nullable<DateTime> NgayCheckOut { get; set; }
         [ForeignKey("IdBook")]
         public virtual Book Book { get; set; }
         [ForeignKey("IdPhong")]

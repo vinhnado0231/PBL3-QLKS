@@ -19,7 +19,7 @@ namespace PBL3.DTO
         [StringLength(10), Required]
         public string ID_HoaDon { get; set; }
         [Required]
-        public DateTime NgaySuDung { get; set; }
+        public Nullable<DateTime> NgaySuDung { get; set; }
         [Required]
         public int SoLuong { get; set; }
         [ForeignKey("ID_Phong")]

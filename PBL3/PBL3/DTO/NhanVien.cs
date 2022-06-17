@@ -12,15 +12,15 @@ namespace PBL3.DTO
     {
         public NhanVien()
         {
-            this.ChiTietThuePhongs = new HashSet<ChiTietThuePhong>();
+            //this.ChiTietThuePhongs = new HashSet<ChiTietThuePhong>();
             this.LichSuDangNhaps = new HashSet<LichSuDangNhap>();
             this.HoaDons = new HashSet<HoaDon>();
             this.Books = new HashSet<Book>();
+            this.TaiKhoans = new HashSet<TaiKhoan>();
         }
         [Key, StringLength(10), Required]
         public string IdNhanVien { get; set; }
-        [StringLength(50), Required]
-        public string Username { get; set; }
+
         [StringLength(10), Required]
         public string IdChucVu { get; set; }
         [Required]
@@ -34,14 +34,13 @@ namespace PBL3.DTO
         [Required]
         public string DiaChi { get; set; }
         [Required]
-        public DateTime NgayVaoLam { get; set; }
-        public virtual ICollection<HoaDon> HoaDons { get; set; }
+        public Nullable<DateTime> NgayVaoLam { get; set; }
         [ForeignKey("IdChucVu")]
         public virtual ChucVu ChucVu { get; set; }
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
+        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
         public virtual ICollection<Book> Books { get; set; }
-        public virtual ICollection<ChiTietThuePhong> ChiTietThuePhongs { get; set; }
-        [ForeignKey("Username")]
-        public virtual TaiKhoan TaiKhoan { get; set; }
+        //public virtual ICollection<ChiTietThuePhong> ChiTietThuePhongs { get; set; }
         public virtual ICollection<LichSuDangNhap> LichSuDangNhaps { get; set; }
 
     }

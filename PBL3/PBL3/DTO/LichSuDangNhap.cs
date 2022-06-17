@@ -15,7 +15,7 @@ namespace PBL3.DTO
         [StringLength(10), Required]
         public string IDNhanVien { get; set; }
         [Required]
-        public DateTime ThoiGian { get; set; }
+        public Nullable<DateTime> ThoiGian { get; set; }
         [Required]
         public bool TrangThai { get; set; }
         [ForeignKey("IDNhanVien")]

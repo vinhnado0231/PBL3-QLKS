@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace PBL3.DAL
 {
     public class CreateDB:
-                    DropCreateDatabaseAlways<QLKS>
+                    CreateDatabaseIfNotExists<QLKS>
     //CreateDatabaseIfNotExists<QLKS>
 
 
@@ -89,19 +89,19 @@ namespace PBL3.DAL
 
             context.ChiTietThuePhongs.AddRange(new ChiTietThuePhong[]
             {
-                new ChiTietThuePhong { IdChiTietThuePhong = "CTTP1", IDHoaDon = "HD1", IDPhong = "1P1", /* IdNhanVien = "NV1",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08)},
-                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP2", IDHoaDon = "HD2", IDPhong = "1P2", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08)},
-                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP3", IDHoaDon = "HD3", IDPhong = "2P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08)},
-                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP4", IDHoaDon = "HD4", IDPhong = "1P1", /*IdNhanVien = "NV3",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08)},
+                new ChiTietThuePhong { IdChiTietThuePhong = "CTTP1", IDHoaDon = "HD1", IDPhong = "1P1", /* IdNhanVien = "NV1",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
+                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP2", IDHoaDon = "HD2", IDPhong = "1P2", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
+                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP3", IDHoaDon = "HD3", IDPhong = "2P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
+                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP4", IDHoaDon = "HD4", IDPhong = "1P1", /*IdNhanVien = "NV3",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = true},
             });
 
             context.Books.AddRange(new Book[] { 
-                new Book {IdBook = "B1", IdKhachHang = "K1", IdNhanVien = "NV1", TienCoc = 300},
-                new Book {IdBook = "B2", IdKhachHang = "K2", IdNhanVien = "NV1", TienCoc = 0},
-                new Book {IdBook = "B3", IdKhachHang = "K2", IdNhanVien = "NV2", TienCoc = 300},
-                new Book {IdBook = "B4", IdKhachHang = "K3", IdNhanVien = "NV3", TienCoc = 0},
-                new Book {IdBook = "B5", IdKhachHang = "K4", IdNhanVien = "NV4", TienCoc = 300},
-                new Book {IdBook = "B6", IdKhachHang = "K5", IdNhanVien = "NV6", TienCoc = 0},
+                new Book {IdBook = "B1", IdKhachHang = "K1", IdNhanVien = "NV1", TienCoc = 300, TrangThai = false},
+                new Book {IdBook = "B2", IdKhachHang = "K2", IdNhanVien = "NV1", TienCoc = 0, TrangThai = false},
+                new Book {IdBook = "B3", IdKhachHang = "K2", IdNhanVien = "NV2", TienCoc = 300, TrangThai = false},
+                new Book {IdBook = "B4", IdKhachHang = "K3", IdNhanVien = "NV3", TienCoc = 0, TrangThai = false},
+                new Book {IdBook = "B5", IdKhachHang = "K4", IdNhanVien = "NV4", TienCoc = 300, TrangThai = false},
+                new Book {IdBook = "B6", IdKhachHang = "K5", IdNhanVien = "NV6", TienCoc = 0, TrangThai = false},
 
             });
 
@@ -121,12 +121,12 @@ namespace PBL3.DAL
 
             context.ChiTietBooks.AddRange(new ChiTietBook[]
             {
-                new ChiTietBook{IdChiTietBook = "CTB1",  IdBook = "B1", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 04), NgayCheckOut = new DateTime(2022, 07, 06)},
-                new ChiTietBook{IdChiTietBook = "CTB2", IdBook = "B1", IdPhong = "1P2", NgayCheckInPhong = new DateTime(2022, 07, 03), NgayCheckOut = new DateTime(2022, 07, 06)},
-                new ChiTietBook{IdChiTietBook = "CTB3", IdBook = "B1", IdPhong = "2P3", NgayCheckInPhong = new DateTime(2022, 07, 02), NgayCheckOut = new DateTime(2022, 07, 08)},
-                new ChiTietBook{IdChiTietBook = "CTB4", IdBook = "B2", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 08), NgayCheckOut = new DateTime(2022, 07, 09)},
-                new ChiTietBook{IdChiTietBook = "CTB5", IdBook = "B3", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 01), NgayCheckOut = new DateTime(2022, 07, 02)},
-                new ChiTietBook{IdChiTietBook = "CTB6", IdBook = "B4", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 03)},
+                new ChiTietBook{IdChiTietBook = "CTB1",  IdBook = "B1", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 04), NgayCheckOut = new DateTime(2022, 07, 06), TrangThai = false},
+                new ChiTietBook{IdChiTietBook = "CTB2", IdBook = "B1", IdPhong = "1P2", NgayCheckInPhong = new DateTime(2022, 07, 03), NgayCheckOut = new DateTime(2022, 07, 06), TrangThai = false},
+                new ChiTietBook{IdChiTietBook = "CTB3", IdBook = "B1", IdPhong = "2P3", NgayCheckInPhong = new DateTime(2022, 07, 02), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
+                new ChiTietBook{IdChiTietBook = "CTB4", IdBook = "B2", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 08), NgayCheckOut = new DateTime(2022, 07, 09), TrangThai = false},
+                new ChiTietBook{IdChiTietBook = "CTB5", IdBook = "B3", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 01), NgayCheckOut = new DateTime(2022, 07, 02), TrangThai = false},
+                new ChiTietBook{IdChiTietBook = "CTB6", IdBook = "B4", IdPhong = "1P1", NgayCheckInPhong = new DateTime(2022, 07, 03), TrangThai = false},
 
             });
 
@@ -161,15 +161,15 @@ namespace PBL3.DAL
 
             context.ChiTietSuDungDichVus.AddRange(new ChiTietSuDungDichVu[] { 
                 new ChiTietSuDungDichVu {ID_ChiTietSuDungDichVu = "CTDV1", ID_Phong = "1P1", ID_DichVu = "DV1", ID_HoaDon = "HD1", 
-                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2},
+                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2, TrangThai = false},
                 new ChiTietSuDungDichVu {ID_ChiTietSuDungDichVu = "CTDV2", ID_Phong = "1P1", ID_DichVu = "DV1", ID_HoaDon = "HD1",
-                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2},
+                    NgaySuDung = new DateTime(2002, 07, 08), SoLuong = 3, TrangThai = false},
                 new ChiTietSuDungDichVu {ID_ChiTietSuDungDichVu = "CTDV3", ID_Phong = "1P1", ID_DichVu = "DV2", ID_HoaDon = "HD1",
-                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2},
+                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2, TrangThai = false},
                 new ChiTietSuDungDichVu {ID_ChiTietSuDungDichVu = "CTDV4", ID_Phong = "1P2", ID_DichVu = "DV1", ID_HoaDon = "HD2",
-                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2},
+                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2, TrangThai = true},
                 new ChiTietSuDungDichVu {ID_ChiTietSuDungDichVu = "CTDV5", ID_Phong = "2P3", ID_DichVu = "DV3", ID_HoaDon = "HD3",
-                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2},
+                    NgaySuDung = new DateTime(2002, 07, 07), SoLuong = 2, TrangThai = false},
             });
 
 

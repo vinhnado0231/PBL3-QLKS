@@ -108,6 +108,7 @@
     <Compile Include="DTOVIEW\DoThatLacView.cs" />
     <Compile Include="DTOVIEW\KhachHangView.cs" />
     <Compile Include="DTOVIEW\NguoiDungView.cs" />
+    <Compile Include="DTOVIEW\ThanhToanDichVuView.cs" />
     <Compile Include="DTO\Book.cs" />
     <Compile Include="DTO\ChiTietBook.cs" />
     <Compile Include="DTO\ChiTietSuDungDichVu.cs" />

@@ -206,3 +206,5 @@ D:\PBL3\PBL3_riu\PBL3-QLKS\PBL3\PBL3\obj\Debug\PBL3.csproj.CoreCompileInputs.cac
 D:\PBL3\PBL3_riu\PBL3-QLKS\PBL3\PBL3\obj\Debug\PBL3.csproj.CopyComplete
 D:\PBL3\PBL3_riu\PBL3-QLKS\PBL3\PBL3\obj\Debug\PBL3.exe
 D:\PBL3\PBL3_riu\PBL3-QLKS\PBL3\PBL3\obj\Debug\PBL3.pdb
+D:\PBL3\PBL3_riu\PBL3-QLKS\PBL3\PBL3\obj\Debug\PBL3.VIEW.formQLHoaDon.resources
+D:\PBL3\PBL3_riu\PBL3-QLKS\PBL3\PBL3\obj\Debug\PBL3.VIEW.formThanhToanHoaDon.resources

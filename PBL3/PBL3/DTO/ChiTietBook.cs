@@ -21,6 +21,8 @@ namespace PBL3.DTO
         public Nullable<DateTime> NgayCheckInPhong { get; set; }
         
         public Nullable<DateTime> NgayCheckOut { get; set; }
+        [Required]
+        public bool TrangThai { get; set; }
         [ForeignKey("IdBook")]
         public virtual Book Book { get; set; }
         [ForeignKey("IdPhong")]

@@ -8,6 +8,20 @@ namespace PBL3.DAL
     public class QLKS : DbContext
     {
 
+        private static QLKS _Instance;
+        public static QLKS Instance
+        {
+            get
+            {
+                if (_Instance == null)
+                {
+                    _Instance = new QLKS();
+                }
+                return _Instance;
+            }
+            set { }
+        }
+
         public QLKS()
             : base("name=QLKS")
         {

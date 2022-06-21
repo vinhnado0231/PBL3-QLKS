@@ -104,8 +104,11 @@
     <Compile Include="DAL\QLKS.cs" />
     <Compile Include="DTOVIEW\CBBItem.cs" />
     <Compile Include="DTOVIEW\CBBItemPhong.cs" />
+    <Compile Include="DTOVIEW\ChiTietDichVuView.cs" />
+    <Compile Include="DTOVIEW\ChiTietThuePhongView.cs" />
     <Compile Include="DTOVIEW\DichVuView.cs" />
     <Compile Include="DTOVIEW\DoThatLacView.cs" />
+    <Compile Include="DTOVIEW\HoaDonView.cs" />
     <Compile Include="DTOVIEW\KhachHangView.cs" />
     <Compile Include="DTOVIEW\NguoiDungView.cs" />
     <Compile Include="DTOVIEW\ThanhToanDichVuView.cs" />

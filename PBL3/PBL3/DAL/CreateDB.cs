@@ -80,9 +80,8 @@ namespace PBL3.DAL
             context.HoaDons.AddRange(new HoaDon[] { 
                 new HoaDon {IdHoaDon = "HD1", IDKhachHang = "K1", IDNhanVien = "NV1", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
                 new HoaDon {IdHoaDon = "HD2", IDKhachHang = "K1", IDNhanVien = "NV2", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
-                new HoaDon {IdHoaDon = "HD3", IDKhachHang = "K1", IDNhanVien = "NV3", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
-                new HoaDon {IdHoaDon = "HD4", IDKhachHang = "K3", IDNhanVien = "NV4", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
-                new HoaDon {IdHoaDon = "HD5", IDKhachHang = "K5", IDNhanVien = "NV6", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
+                new HoaDon {IdHoaDon = "HD3", IDKhachHang = "K3", IDNhanVien = "NV4", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
+                new HoaDon {IdHoaDon = "HD4", IDKhachHang = "K5", IDNhanVien = "NV6", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
 
             });
 
@@ -90,9 +89,10 @@ namespace PBL3.DAL
             context.ChiTietThuePhongs.AddRange(new ChiTietThuePhong[]
             {
                 new ChiTietThuePhong { IdChiTietThuePhong = "CTTP1", IDHoaDon = "HD1", IDPhong = "1P1", /* IdNhanVien = "NV1",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
-                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP2", IDHoaDon = "HD2", IDPhong = "1P2", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
-                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP3", IDHoaDon = "HD3", IDPhong = "2P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
-                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP4", IDHoaDon = "HD4", IDPhong = "1P1", /*IdNhanVien = "NV3",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = true},
+                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP2", IDHoaDon = "HD1", IDPhong = "1P2", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
+                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP3", IDHoaDon = "HD2", IDPhong = "1P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
+                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP4", IDHoaDon = "HD3", IDPhong = "2P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
+                new ChiTietThuePhong {IdChiTietThuePhong = "CTTP5", IDHoaDon = "HD4", IDPhong = "1P1", /*IdNhanVien = "NV3",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = true},
             });
 
             context.Books.AddRange(new Book[] { 

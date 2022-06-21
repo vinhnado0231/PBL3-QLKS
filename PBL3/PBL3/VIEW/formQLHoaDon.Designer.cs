@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formQLHoaDon));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.searchTxt = new System.Windows.Forms.TextBox();
@@ -47,15 +49,10 @@
             this.searchCbb = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeTo = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeFrom = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewHoaDon = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,10 +87,11 @@
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datLaiBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.filterBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.filterSearchBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoaDon)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -127,11 +125,11 @@
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.groupBox5.Location = new System.Drawing.Point(278, 17);
+            this.groupBox5.Location = new System.Drawing.Point(424, 17);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox5.Size = new System.Drawing.Size(281, 102);
+            this.groupBox5.Size = new System.Drawing.Size(294, 102);
             this.groupBox5.TabIndex = 33;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "TÌm kiếm";
@@ -163,11 +161,11 @@
             this.btnSearch.ColorContrastOnClick = 45;
             this.btnSearch.ColorContrastOnHover = 45;
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnSearch.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnSearch.CustomizableEdges = borderEdges1;
             this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSearch.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSearch.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -262,76 +260,22 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.filterSearchBtn);
+            this.groupBox3.Controls.Add(this.filterBtn);
+            this.groupBox3.Controls.Add(this.dateTimeTo);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.dateTimeFrom);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.groupBox3.Location = new System.Drawing.Point(6, 17);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(281, 102);
+            this.groupBox3.Size = new System.Drawing.Size(414, 102);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lọc theo ngày ";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.dateTimePicker3);
-            this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.dateTimePicker4);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.groupBox4.Location = new System.Drawing.Point(278, 0);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(262, 102);
-            this.groupBox4.TabIndex = 33;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Lọc theo ngày ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
-            this.label2.Location = new System.Drawing.Point(12, 29);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Ngày sử dụng";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(84, 72);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(146, 19);
-            this.dateTimePicker3.TabIndex = 32;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
-            this.label3.Location = new System.Drawing.Point(12, 72);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Ngày sử dụng";
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(84, 29);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(146, 19);
-            this.dateTimePicker4.TabIndex = 32;
             // 
             // label7
             // 
@@ -344,13 +288,13 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Từ ngày";
             // 
-            // dateTimePicker1
+            // dateTimeTo
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(84, 72);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(176, 19);
-            this.dateTimePicker1.TabIndex = 32;
+            this.dateTimeTo.Location = new System.Drawing.Point(84, 72);
+            this.dateTimeTo.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimeTo.Name = "dateTimeTo";
+            this.dateTimeTo.Size = new System.Drawing.Size(176, 19);
+            this.dateTimeTo.TabIndex = 32;
             // 
             // label1
             // 
@@ -363,33 +307,33 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Đến ngày";
             // 
-            // dateTimePicker2
+            // dateTimeFrom
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(84, 29);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(176, 19);
-            this.dateTimePicker2.TabIndex = 32;
+            this.dateTimeFrom.Location = new System.Drawing.Point(84, 29);
+            this.dateTimeFrom.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimeFrom.Name = "dateTimeFrom";
+            this.dateTimeFrom.Size = new System.Drawing.Size(176, 19);
+            this.dateTimeFrom.TabIndex = 32;
             // 
             // dataGridViewHoaDon
             // 
             this.dataGridViewHoaDon.AllowCustomTheming = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewHoaDon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewHoaDon.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridViewHoaDon.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewHoaDon.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridViewHoaDon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewHoaDon.ColumnHeadersHeight = 40;
             this.dataGridViewHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -422,14 +366,14 @@
             this.dataGridViewHoaDon.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewHoaDon.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.dataGridViewHoaDon.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewHoaDon.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewHoaDon.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewHoaDon.EnableHeadersVisualStyles = false;
             this.dataGridViewHoaDon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.dataGridViewHoaDon.HeaderBackColor = System.Drawing.Color.Teal;
@@ -561,22 +505,22 @@
             // dataGridViewThuePhong
             // 
             this.dataGridViewThuePhong.AllowCustomTheming = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewThuePhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewThuePhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewThuePhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewThuePhong.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridViewThuePhong.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewThuePhong.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridViewThuePhong.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewThuePhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewThuePhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewThuePhong.ColumnHeadersHeight = 40;
             this.dataGridViewThuePhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT1,
@@ -604,14 +548,14 @@
             this.dataGridViewThuePhong.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewThuePhong.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.dataGridViewThuePhong.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewThuePhong.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewThuePhong.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewThuePhong.EnableHeadersVisualStyles = false;
             this.dataGridViewThuePhong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.dataGridViewThuePhong.HeaderBackColor = System.Drawing.Color.Teal;
@@ -695,22 +639,22 @@
             // dataGridViewDV
             // 
             this.dataGridViewDV.AllowCustomTheming = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            this.dataGridViewDV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dataGridViewDV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDV.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridViewDV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridViewDV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewDV.ColumnHeadersHeight = 40;
             this.dataGridViewDV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT2,
@@ -739,14 +683,14 @@
             this.dataGridViewDV.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridViewDV.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.dataGridViewDV.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewDV.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDV.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewDV.EnableHeadersVisualStyles = false;
             this.dataGridViewDV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.dataGridViewDV.HeaderBackColor = System.Drawing.Color.Teal;
@@ -841,11 +785,11 @@
             this.datLaiBtn.ColorContrastOnClick = 45;
             this.datLaiBtn.ColorContrastOnHover = 45;
             this.datLaiBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.datLaiBtn.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.datLaiBtn.CustomizableEdges = borderEdges2;
             this.datLaiBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.datLaiBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.datLaiBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -869,7 +813,7 @@
             this.datLaiBtn.IdleIconLeftImage = null;
             this.datLaiBtn.IdleIconRightImage = null;
             this.datLaiBtn.IndicateFocus = false;
-            this.datLaiBtn.Location = new System.Drawing.Point(621, 84);
+            this.datLaiBtn.Location = new System.Drawing.Point(735, 84);
             this.datLaiBtn.Margin = new System.Windows.Forms.Padding(2);
             this.datLaiBtn.Name = "datLaiBtn";
             this.datLaiBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -913,6 +857,188 @@
             this.datLaiBtn.UseDefaultRadiusAndThickness = true;
             this.datLaiBtn.Click += new System.EventHandler(this.datLaiBtn_Click);
             // 
+            // filterBtn
+            // 
+            this.filterBtn.AllowAnimations = true;
+            this.filterBtn.AllowMouseEffects = true;
+            this.filterBtn.AllowToggling = false;
+            this.filterBtn.AnimationSpeed = 200;
+            this.filterBtn.AutoGenerateColors = false;
+            this.filterBtn.AutoRoundBorders = false;
+            this.filterBtn.AutoSizeLeftIcon = true;
+            this.filterBtn.AutoSizeRightIcon = true;
+            this.filterBtn.BackColor = System.Drawing.Color.Transparent;
+            this.filterBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("filterBtn.BackgroundImage")));
+            this.filterBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterBtn.ButtonText = "Lọc";
+            this.filterBtn.ButtonTextMarginLeft = 0;
+            this.filterBtn.ColorContrastOnClick = 45;
+            this.filterBtn.ColorContrastOnHover = 45;
+            this.filterBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.filterBtn.CustomizableEdges = borderEdges4;
+            this.filterBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.filterBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.filterBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.filterBtn.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.filterBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.filterBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.filterBtn.ForeColor = System.Drawing.Color.White;
+            this.filterBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.filterBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.filterBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.filterBtn.IconMarginLeft = 11;
+            this.filterBtn.IconPadding = 10;
+            this.filterBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.filterBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.filterBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.filterBtn.IconSize = 25;
+            this.filterBtn.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterBtn.IdleBorderRadius = 5;
+            this.filterBtn.IdleBorderThickness = 1;
+            this.filterBtn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterBtn.IdleIconLeftImage = null;
+            this.filterBtn.IdleIconRightImage = null;
+            this.filterBtn.IndicateFocus = false;
+            this.filterBtn.Location = new System.Drawing.Point(284, 27);
+            this.filterBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.filterBtn.Name = "filterBtn";
+            this.filterBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.filterBtn.OnDisabledState.BorderRadius = 5;
+            this.filterBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterBtn.OnDisabledState.BorderThickness = 1;
+            this.filterBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.filterBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.filterBtn.OnDisabledState.IconLeftImage = null;
+            this.filterBtn.OnDisabledState.IconRightImage = null;
+            this.filterBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.filterBtn.onHoverState.BorderRadius = 5;
+            this.filterBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterBtn.onHoverState.BorderThickness = 1;
+            this.filterBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.filterBtn.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.filterBtn.onHoverState.IconLeftImage = null;
+            this.filterBtn.onHoverState.IconRightImage = null;
+            this.filterBtn.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterBtn.OnIdleState.BorderRadius = 5;
+            this.filterBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterBtn.OnIdleState.BorderThickness = 1;
+            this.filterBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.filterBtn.OnIdleState.IconLeftImage = null;
+            this.filterBtn.OnIdleState.IconRightImage = null;
+            this.filterBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.filterBtn.OnPressedState.BorderRadius = 5;
+            this.filterBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterBtn.OnPressedState.BorderThickness = 1;
+            this.filterBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.filterBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.filterBtn.OnPressedState.IconLeftImage = null;
+            this.filterBtn.OnPressedState.IconRightImage = null;
+            this.filterBtn.Size = new System.Drawing.Size(115, 26);
+            this.filterBtn.TabIndex = 34;
+            this.filterBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.filterBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.filterBtn.TextMarginLeft = 0;
+            this.filterBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.filterBtn.UseDefaultRadiusAndThickness = true;
+            this.filterBtn.Click += new System.EventHandler(this.filterBtn_Click);
+            // 
+            // filterSearchBtn
+            // 
+            this.filterSearchBtn.AllowAnimations = true;
+            this.filterSearchBtn.AllowMouseEffects = true;
+            this.filterSearchBtn.AllowToggling = false;
+            this.filterSearchBtn.AnimationSpeed = 200;
+            this.filterSearchBtn.AutoGenerateColors = false;
+            this.filterSearchBtn.AutoRoundBorders = false;
+            this.filterSearchBtn.AutoSizeLeftIcon = true;
+            this.filterSearchBtn.AutoSizeRightIcon = true;
+            this.filterSearchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.filterSearchBtn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterSearchBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("filterSearchBtn.BackgroundImage")));
+            this.filterSearchBtn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterSearchBtn.ButtonText = "Lọc và tìm kiếm";
+            this.filterSearchBtn.ButtonTextMarginLeft = 0;
+            this.filterSearchBtn.ColorContrastOnClick = 45;
+            this.filterSearchBtn.ColorContrastOnHover = 45;
+            this.filterSearchBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.filterSearchBtn.CustomizableEdges = borderEdges3;
+            this.filterSearchBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.filterSearchBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.filterSearchBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.filterSearchBtn.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.filterSearchBtn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.filterSearchBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.filterSearchBtn.ForeColor = System.Drawing.Color.White;
+            this.filterSearchBtn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.filterSearchBtn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.filterSearchBtn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.filterSearchBtn.IconMarginLeft = 11;
+            this.filterSearchBtn.IconPadding = 10;
+            this.filterSearchBtn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.filterSearchBtn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.filterSearchBtn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.filterSearchBtn.IconSize = 25;
+            this.filterSearchBtn.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterSearchBtn.IdleBorderRadius = 5;
+            this.filterSearchBtn.IdleBorderThickness = 1;
+            this.filterSearchBtn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterSearchBtn.IdleIconLeftImage = null;
+            this.filterSearchBtn.IdleIconRightImage = null;
+            this.filterSearchBtn.IndicateFocus = false;
+            this.filterSearchBtn.Location = new System.Drawing.Point(284, 65);
+            this.filterSearchBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.filterSearchBtn.Name = "filterSearchBtn";
+            this.filterSearchBtn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.filterSearchBtn.OnDisabledState.BorderRadius = 5;
+            this.filterSearchBtn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterSearchBtn.OnDisabledState.BorderThickness = 1;
+            this.filterSearchBtn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.filterSearchBtn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.filterSearchBtn.OnDisabledState.IconLeftImage = null;
+            this.filterSearchBtn.OnDisabledState.IconRightImage = null;
+            this.filterSearchBtn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.filterSearchBtn.onHoverState.BorderRadius = 5;
+            this.filterSearchBtn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterSearchBtn.onHoverState.BorderThickness = 1;
+            this.filterSearchBtn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.filterSearchBtn.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.filterSearchBtn.onHoverState.IconLeftImage = null;
+            this.filterSearchBtn.onHoverState.IconRightImage = null;
+            this.filterSearchBtn.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterSearchBtn.OnIdleState.BorderRadius = 5;
+            this.filterSearchBtn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterSearchBtn.OnIdleState.BorderThickness = 1;
+            this.filterSearchBtn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.filterSearchBtn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.filterSearchBtn.OnIdleState.IconLeftImage = null;
+            this.filterSearchBtn.OnIdleState.IconRightImage = null;
+            this.filterSearchBtn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.filterSearchBtn.OnPressedState.BorderRadius = 5;
+            this.filterSearchBtn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.filterSearchBtn.OnPressedState.BorderThickness = 1;
+            this.filterSearchBtn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.filterSearchBtn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.filterSearchBtn.OnPressedState.IconLeftImage = null;
+            this.filterSearchBtn.OnPressedState.IconRightImage = null;
+            this.filterSearchBtn.Size = new System.Drawing.Size(115, 26);
+            this.filterSearchBtn.TabIndex = 34;
+            this.filterSearchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.filterSearchBtn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.filterSearchBtn.TextMarginLeft = 0;
+            this.filterSearchBtn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.filterSearchBtn.UseDefaultRadiusAndThickness = true;
+            this.filterSearchBtn.Click += new System.EventHandler(this.filterSearchBtn_Click);
+            // 
             // formQLHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -929,8 +1055,6 @@
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHoaDon)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -943,7 +1067,7 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimeFrom;
         private Bunifu.UI.WinForms.BunifuDataGridView dataGridViewHoaDon;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -952,12 +1076,7 @@
         private System.Windows.Forms.ComboBox searchCbb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimeTo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -992,5 +1111,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn đ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton datLaiBtn;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton filterBtn;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton filterSearchBtn;
     }
 }

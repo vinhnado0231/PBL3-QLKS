@@ -22,9 +22,9 @@ namespace PBL3.VIEW
         }
 
 
-        public void showDataView(string txt, string loaiTimKiem)
+        public void showDataView(string txt, string loaiTimKiem, DateTime From, DateTime To)
         {
-            dataGridViewHoaDon.DataSource = QLHoaDon_BLL.Instance.getAllHoaDonView(txt, loaiTimKiem).ToList();
+            dataGridViewHoaDon.DataSource = QLHoaDon_BLL.Instance.getAllHoaDonView(txt, loaiTimKiem, From, To).ToList();
             
         }
 
@@ -48,7 +48,7 @@ namespace PBL3.VIEW
 
         private void formQLHoaDon_Load(object sender, EventArgs e)
         {
-            showDataView("", "");
+            showDataView("", "", new DateTime(), new DateTime());
             setSTT();
         }
 
@@ -67,16 +67,26 @@ namespace PBL3.VIEW
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            showDataView(searchTxt.Text, searchCbb.SelectedItem.ToString());
+            showDataView(searchTxt.Text, searchCbb.SelectedItem.ToString(), new DateTime(), new DateTime());
             setSTT();
         }
 
         private void datLaiBtn_Click(object sender, EventArgs e)
         {
-            showDataView("", "");
+            showDataView("", "", new DateTime(), new DateTime());
             setSTT();
             searchTxt.Text = "";
             searchCbb.SelectedItem = null;
+        }
+
+        private void filterBtn_Click(object sender, EventArgs e)
+        {
+            showDataView("", "", dateTimeFrom.Value, dateTimeTo.Value);
+        }
+
+        private void filterSearchBtn_Click(object sender, EventArgs e)
+        {
+            showDataView(searchTxt.Text, searchCbb.SelectedItem.ToString(), dateTimeFrom.Value, dateTimeTo.Value);
         }
     }
 }

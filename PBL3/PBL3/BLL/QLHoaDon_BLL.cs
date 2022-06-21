@@ -72,64 +72,72 @@ namespace PBL3.BLL
 
 
 
-        public List<HoaDonView> getAllHoaDonView(string txt, string loaiTimKiem)
+        public List<HoaDonView> getAllHoaDonView(string txt, string loaiTimKiem, DateTime From, DateTime To)
         {
             List<HoaDonView> data = new List<HoaDonView>();
-
-            if (loaiTimKiem == "Mã hóa đơn")
+            if (From != new DateTime() && To != new DateTime())
             {
-                foreach (HoaDon i in GetAllHoaDon())
+
+
+                if (loaiTimKiem == "Mã hóa đơn")
                 {
-                    if (i.IdHoaDon.Contains(txt))
+                    foreach (HoaDon i in GetAllHoaDon())
                     {
-                        AddHoaDonView(data, i);
+                        if (i.IdHoaDon.Contains(txt))
+                        {
+                            AddHoaDonView(data, i);
+                        }
                     }
                 }
-            }
 
-            if (loaiTimKiem == "Mã khách hàng")
-            {
-                foreach (HoaDon i in GetAllHoaDon())
+                if (loaiTimKiem == "Mã khách hàng")
                 {
-                    if (i.IDKhachHang.Contains(txt))
+                    foreach (HoaDon i in GetAllHoaDon())
                     {
-                        AddHoaDonView(data, i);
+                        if (i.IDKhachHang.Contains(txt))
+                        {
+                            AddHoaDonView(data, i);
+                        }
                     }
                 }
-            }
 
-            if (loaiTimKiem == "Tên khách hàng")
-            {
-                foreach (HoaDon i in GetAllHoaDon())
+                if (loaiTimKiem == "Tên khách hàng")
                 {
-                    if (i.KhachHang.Ten.Contains(txt))
+                    foreach (HoaDon i in GetAllHoaDon())
                     {
-                        AddHoaDonView(data, i);
+                        if (i.KhachHang.Ten.Contains(txt))
+                        {
+                            AddHoaDonView(data, i);
+                        }
                     }
                 }
-            }
 
-            if (loaiTimKiem == "Mã nhân viên")
-            {
-                foreach (HoaDon i in GetAllHoaDon())
+                if (loaiTimKiem == "Mã nhân viên")
                 {
-                    if (i.IDNhanVien.Contains(txt))
+                    foreach (HoaDon i in GetAllHoaDon())
                     {
-                        AddHoaDonView(data, i);
+                        if (i.IDNhanVien.Contains(txt))
+                        {
+                            AddHoaDonView(data, i);
+                        }
                     }
                 }
-            }
 
-            if (loaiTimKiem == "")
-            {
-                foreach (HoaDon i in GetAllHoaDon())
+                if (loaiTimKiem == "")
                 {
+                    foreach (HoaDon i in GetAllHoaDon())
+                    {
 
 
                         AddHoaDonView(data, i);
 
+                    }
                 }
+
             }
+
+
+           
             return data;
         }
 

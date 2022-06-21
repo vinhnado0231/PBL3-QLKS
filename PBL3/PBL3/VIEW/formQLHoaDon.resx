@@ -127,6 +127,16 @@
         o3d4idt5+ptpdsJBOj3GYj/MvrFcjPEgE5h6AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="datLaiBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKYAAAAaCAYAAAA9gCd5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADHSURBVHhe7duhDUIxFIXhSrZpmQDLAmhILwyBepbcopiG
+        Ld4GLIAgJAQBAh7gSPXrEX+TT90jf9vweVO3eSq5T8VeQDu5j7u8+UaZ3BbJ86U+BEbmdk1ltR3CzKfq
+        AGgkut1D7QC0RpiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQRJiQ
+        RJiQRJiQFGKxc+0AtJOfIXreJ1/f6gNgXEOPj+R2/P0tL3b4HwBNDFHOuuXkDRgBltBbF7gaAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
   <metadata name="STT.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

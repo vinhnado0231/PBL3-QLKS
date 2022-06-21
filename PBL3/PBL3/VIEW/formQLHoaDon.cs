@@ -19,20 +19,12 @@ namespace PBL3.VIEW
         public formQLHoaDon()
         {
             InitializeComponent();
-            setSearchCbb();
         }
 
-        public void setSearchCbb()
-        {
-            for (int i = 1; i < dataGridViewHoaDon.Columns.Count; i++) 
-            {
-                searchCbb.Items.Add(dataGridViewHoaDon.Columns[i].HeaderText);
-            }
-        }
 
-        public void showDataView()
+        public void showDataView(string txt, string loaiTimKiem)
         {
-            dataGridViewHoaDon.DataSource = QLHoaDon_BLL.Instance.getAllHoaDonView().ToList();
+            dataGridViewHoaDon.DataSource = QLHoaDon_BLL.Instance.getAllHoaDonView(txt, loaiTimKiem).ToList();
             
         }
 
@@ -43,18 +35,23 @@ namespace PBL3.VIEW
                 dataGridViewHoaDon.Rows[i].Cells["STT"].Value = i + 1;
             }
 
+            for (int i = 0; i < dataGridViewThuePhong.Rows.Count; i++)
+            {
+                dataGridViewThuePhong.Rows[i].Cells["STT1"].Value = i + 1;
+            }
 
-
-
-
-
+            for (int i = 0; i < dataGridViewDV.Rows.Count; i++)
+            {
+                dataGridViewDV.Rows[i].Cells["STT2"].Value = i + 1;
+            }
         }
 
         private void formQLHoaDon_Load(object sender, EventArgs e)
         {
-            showDataView();
+            showDataView("", "");
             setSTT();
         }
+
 
         private void dataGridViewHoaDon_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -62,17 +59,24 @@ namespace PBL3.VIEW
 
 
             dataGridViewThuePhong.DataSource = QLHoaDon_BLL.Instance.getAllChiTietThuePhongView(idHoaDon).ToList();
-            for (int i = 0; i < dataGridViewThuePhong.Rows.Count; i++)
-            {
-                dataGridViewThuePhong.Rows[i].Cells["STT1"].Value = i + 1;
-            }
+            setSTT();
             dataGridViewDV.DataSource = QLHoaDon_BLL.Instance.getAllChiTietDVView(idHoaDon).ToList();
-            for (int i = 0; i < dataGridViewDV.Rows.Count; i++)
-            {
-                dataGridViewDV.Rows[i].Cells["STT2"].Value = i + 1;
-            }
+            setSTT();
+
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            showDataView(searchTxt.Text, searchCbb.SelectedItem.ToString());
+            setSTT();
+        }
 
+        private void datLaiBtn_Click(object sender, EventArgs e)
+        {
+            showDataView("", "");
+            setSTT();
+            searchTxt.Text = "";
+            searchCbb.SelectedItem = null;
+        }
     }
 }

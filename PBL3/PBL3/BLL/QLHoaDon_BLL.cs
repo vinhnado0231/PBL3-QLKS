@@ -72,30 +72,86 @@ namespace PBL3.BLL
 
 
 
-        public List<HoaDonView> getAllHoaDonView()
+        public List<HoaDonView> getAllHoaDonView(string txt, string loaiTimKiem)
         {
             List<HoaDonView> data = new List<HoaDonView>();
 
-
-            foreach (HoaDon i in GetAllHoaDon())
+            if (loaiTimKiem == "Mã hóa đơn")
             {
-                data.Add(new HoaDonView { 
-                    MaHoaDon = i.IdHoaDon,
-                    MaKhachHang = i.IDKhachHang,
-                    TenKhachHang = i.KhachHang.Ten,
-                    MaNhanVien = i.IDNhanVien,
-                    NgayThanhToan = Convert.ToDateTime(i.NgayHoaDon),
-                    TienTraTruoc = i.TienTraTruoc,
-                    TienPhong = TongTienPhongByIdHoaDon(i.IdHoaDon),
-                    TongTienDV = TongTienDVByIdHoaDon(i.IdHoaDon),
-                    ThueVAT = (TongTienPhongByIdHoaDon(i.IdHoaDon) + TongTienDVByIdHoaDon(i.IdHoaDon)) * 5/100,
-                    TongTien = TongTienDVByIdHoaDon(i.IdHoaDon) + TongTienPhongByIdHoaDon(i.IdHoaDon) + i.TienTraTruoc + (TongTienPhongByIdHoaDon(i.IdHoaDon) + TongTienDVByIdHoaDon(i.IdHoaDon)) * 5 / 100,
-                    TrangThai = i.TinhTrang
-                });
+                foreach (HoaDon i in GetAllHoaDon())
+                {
+                    if (i.IdHoaDon.Contains(txt))
+                    {
+                        AddHoaDonView(data, i);
+                    }
+                }
+            }
+
+            if (loaiTimKiem == "Mã khách hàng")
+            {
+                foreach (HoaDon i in GetAllHoaDon())
+                {
+                    if (i.IDKhachHang.Contains(txt))
+                    {
+                        AddHoaDonView(data, i);
+                    }
+                }
+            }
+
+            if (loaiTimKiem == "Tên khách hàng")
+            {
+                foreach (HoaDon i in GetAllHoaDon())
+                {
+                    if (i.KhachHang.Ten.Contains(txt))
+                    {
+                        AddHoaDonView(data, i);
+                    }
+                }
+            }
+
+            if (loaiTimKiem == "Mã nhân viên")
+            {
+                foreach (HoaDon i in GetAllHoaDon())
+                {
+                    if (i.IDNhanVien.Contains(txt))
+                    {
+                        AddHoaDonView(data, i);
+                    }
+                }
+            }
+
+            if (loaiTimKiem == "")
+            {
+                foreach (HoaDon i in GetAllHoaDon())
+                {
+
+
+                        AddHoaDonView(data, i);
+
+                }
             }
             return data;
         }
 
+        public void AddHoaDonView(List<HoaDonView> data, HoaDon i)
+        {
+            
+
+            data.Add(new HoaDonView
+            {
+                MaHoaDon = i.IdHoaDon,
+                MaKhachHang = i.IDKhachHang,
+                TenKhachHang = i.KhachHang.Ten,
+                MaNhanVien = i.IDNhanVien,
+                NgayThanhToan = Convert.ToDateTime(i.NgayHoaDon),
+                TienTraTruoc = i.TienTraTruoc,
+                TienPhong = TongTienPhongByIdHoaDon(i.IdHoaDon),
+                TongTienDV = TongTienDVByIdHoaDon(i.IdHoaDon),
+                ThueVAT = (TongTienPhongByIdHoaDon(i.IdHoaDon) + TongTienDVByIdHoaDon(i.IdHoaDon)) * 5 / 100,
+                TongTien = TongTienDVByIdHoaDon(i.IdHoaDon) + TongTienPhongByIdHoaDon(i.IdHoaDon) + i.TienTraTruoc + (TongTienPhongByIdHoaDon(i.IdHoaDon) + TongTienDVByIdHoaDon(i.IdHoaDon)) * 5 / 100,
+                TrangThai = i.TinhTrang
+            });
+        }
 
         public List<ChiTietThuePhongView> getAllChiTietThuePhongView(string idHoaDon)
         {

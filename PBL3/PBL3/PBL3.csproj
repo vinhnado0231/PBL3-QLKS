@@ -98,6 +98,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\QLChucVu_BLL.cs" />
+    <Compile Include="BLL\QLKhachHang_BLL.cs" />
+    <Compile Include="BLL\QLNhanVien_BLL.cs" />
+    <Compile Include="BLL\QLTaiKhoan_BLL.cs" />
     <Compile Include="DAL\CreateDB.cs" />
     <Compile Include="DAL\QLKS.cs" />
     <Compile Include="DTOVIEW\CBBItem.cs" />
@@ -105,7 +109,7 @@
     <Compile Include="DTOVIEW\DichVuView.cs" />
     <Compile Include="DTOVIEW\DoThatLacView.cs" />
     <Compile Include="DTOVIEW\KhachHangView.cs" />
-    <Compile Include="DTOVIEW\NguoiDungView.cs" />
+    <Compile Include="DTOVIEW\NhanVienView.cs" />
     <Compile Include="DTO\Book.cs" />
     <Compile Include="DTO\ChiTietBook.cs" />
     <Compile Include="DTO\ChiTietSuDungDichVu.cs" />
@@ -266,8 +270,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

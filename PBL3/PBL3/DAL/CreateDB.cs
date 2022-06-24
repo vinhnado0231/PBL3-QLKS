@@ -44,45 +44,48 @@ namespace PBL3.DAL
 
             context.KhachHangs.AddRange(new KhachHang[]
             {
-                new KhachHang {IdKhachHang = "K1", Ten = "NVA", GioiTinh = true, CMND = "123456789", SDT = "0123456789", QuocTich = "VN", GhiChu = ""},
-                new KhachHang {IdKhachHang = "K2", Ten = "NVB", GioiTinh = false, CMND = "147258369", SDT = "147258369", QuocTich = "VN", GhiChu = ""},
-                new KhachHang {IdKhachHang = "K3", Ten = "NVC", GioiTinh = false, CMND = "258147369", SDT = "258147369", QuocTich = "VN", GhiChu = ""},
-                new KhachHang {IdKhachHang = "K4", Ten = "NVD", GioiTinh = false, CMND = "123465147", SDT = "123465147", QuocTich = "VN", GhiChu = ""},
-                new KhachHang {IdKhachHang = "K5", Ten = "NVE", GioiTinh = true, CMND = "369123456", SDT = "369123456", QuocTich = "VN", GhiChu = ""},
+                new KhachHang{IdKhachHang="KH01",Ten="Nguyễn Văn A",GioiTinh=true,CMND="201642168",QuocTich="Việt Nam",GhiChu="Không",SDT="0447494380",NgaySinh=new DateTime(2002,1,1)},
+                new KhachHang{IdKhachHang="KH02",Ten="Nguyễn Thị B",GioiTinh=false,CMND="201837437",QuocTich="Việt Nam",GhiChu="Không",SDT="0932666342",NgaySinh=new DateTime(2002,1,1)},
+                new KhachHang{IdKhachHang="KH03",Ten="Trần Hồng C",GioiTinh=false,CMND="211889168",QuocTich="Việt Nam",GhiChu="Không",SDT="0140426734",NgaySinh=new DateTime(2002,1,1)},
+                new KhachHang{IdKhachHang="KH04",Ten="Lê Văn D",GioiTinh=true,CMND="201829112",QuocTich="Việt Nam",GhiChu="Không",SDT="584638596",NgaySinh=new DateTime(2002,1,1)},
+                new KhachHang{IdKhachHang="KH05",Ten="Nguyễn Thị E",GioiTinh=false,CMND="2029819203",QuocTich="Việt Nam",GhiChu="Không",SDT="0865245213",NgaySinh=new DateTime(2002,1,1)},
+                new KhachHang{IdKhachHang="KH06",Ten="Nguyễn Ngọc F",GioiTinh=false,CMND="212821128",QuocTich="Việt Nam",GhiChu="Không",SDT="0777229083",NgaySinh=new DateTime(2002,1,1)},
+                new KhachHang{IdKhachHang="KH07",Ten="Phạm Văn G",GioiTinh=true,CMND="201824567",QuocTich="Việt Nam",GhiChu="Không",SDT="0716440909",NgaySinh=new DateTime(2002,1,1)},
+                new KhachHang{IdKhachHang="KH08",Ten="Huỳnh Đinh H",GioiTinh=true,CMND="201876543",QuocTich="Việt Nam",GhiChu="Không",SDT="0987456789",NgaySinh=new DateTime(2002,1,1)}
 
             });
 
             context.TaiKhoans.AddRange(new TaiKhoan[]
             {
-                new TaiKhoan {TenDangNhap = "NhanVien1", IdNhanVien = "NV1", MatKhau = "nhanvien", TrangThai = true},
-                new TaiKhoan {TenDangNhap = "NhanVien2", IdNhanVien = "NV2", MatKhau = "nhanvien", TrangThai = false},
-                new TaiKhoan {TenDangNhap = "NhanVien3", IdNhanVien = "NV3", MatKhau = "nhanvien", TrangThai = false},
-                new TaiKhoan {TenDangNhap = "NhanVien4", IdNhanVien = "NV4", MatKhau = "nhanvien", TrangThai = false},
-                new TaiKhoan {TenDangNhap = "Admin", IdNhanVien = "NV6", MatKhau = "admin", TrangThai = false},
+                new TaiKhoan {TenDangNhap = "NhanVien1", IdTaiKhoan = "1", MatKhau = "nhanvien", TrangThai = true},
+                new TaiKhoan {TenDangNhap = "NhanVien2", IdTaiKhoan = "2", MatKhau = "nhanvien", TrangThai = false},
+                new TaiKhoan {TenDangNhap = "NhanVien3", IdTaiKhoan = "3", MatKhau = "nhanvien", TrangThai = false},
+                new TaiKhoan {TenDangNhap = "NhanVien4", IdTaiKhoan = "4", MatKhau = "nhanvien", TrangThai = false},
+                new TaiKhoan {TenDangNhap = "Admin", IdTaiKhoan = "5", MatKhau = "admin", TrangThai = false},
 
             });
 
             context.NhanViens.AddRange(new NhanVien[]
             {
                 new NhanVien {IdNhanVien = "NV1",  IdChucVu = "NV", Ten = "NNA", GioiTinh = true, CMND = "1234698",
-                SDT = "13245789", DiaChi = "A", NgayVaoLam = new DateTime(2022, 05, 01)},
+                SDT = "13245789", DiaChi = "A", NgayVaoLam = new DateTime(2022, 05, 01), IdTaiKhoan = "1"},
                 new NhanVien {IdNhanVien = "NV2",  IdChucVu = "NV", Ten = "NNB", GioiTinh = false, CMND = "1234698",
-                SDT = "13245789", DiaChi = "A", NgayVaoLam = new DateTime(2022, 05, 01)},
+                SDT = "13245789", DiaChi = "A", NgayVaoLam = new DateTime(2022, 05, 01) ,IdTaiKhoan = "2"},
                 new NhanVien {IdNhanVien = "NV3",  IdChucVu = "NV", Ten = "NNC", GioiTinh = true, CMND = "1234698",
-                SDT = "13245789", DiaChi = "A", NgayVaoLam =  new DateTime(2022, 05, 01)},
+                SDT = "13245789", DiaChi = "A", NgayVaoLam =  new DateTime(2022, 05, 01), IdTaiKhoan = "3"},
                 new NhanVien {IdNhanVien = "NV4",  IdChucVu = "NV", Ten = "NND", GioiTinh = false, CMND = "1234698",
-                SDT = "13245789", DiaChi = "A", NgayVaoLam =  new DateTime(2022, 05, 01)},
+                SDT = "13245789", DiaChi = "A", NgayVaoLam =  new DateTime(2022, 05, 01), IdTaiKhoan = "4"},
                 new NhanVien {IdNhanVien = "NV6", IdChucVu = "AD", Ten = "NNA", GioiTinh = true, CMND = "1234698",
-                SDT = "13245789", DiaChi = "A", NgayVaoLam =  new DateTime(2022, 05, 01)},
+                SDT = "13245789", DiaChi = "A", NgayVaoLam =  new DateTime(2022, 05, 01), IdTaiKhoan = "5"},
 
             });
 
             context.HoaDons.AddRange(new HoaDon[] { 
-                new HoaDon {IdHoaDon = "HD1", IDKhachHang = "K1", IDNhanVien = "NV1", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
-                new HoaDon {IdHoaDon = "HD2", IDKhachHang = "K1", IDNhanVien = "NV2", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
-                new HoaDon {IdHoaDon = "HD3", IDKhachHang = "K1", IDNhanVien = "NV3", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
-                new HoaDon {IdHoaDon = "HD4", IDKhachHang = "K3", IDNhanVien = "NV4", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
-                new HoaDon {IdHoaDon = "HD5", IDKhachHang = "K5", IDNhanVien = "NV6", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
+                new HoaDon {IdHoaDon = "HD1", IDKhachHang = "KH01", IDNhanVien = "NV1", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
+                new HoaDon {IdHoaDon = "HD2", IDKhachHang = "KH01", IDNhanVien = "NV2", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
+                new HoaDon {IdHoaDon = "HD3", IDKhachHang = "KH02", IDNhanVien = "NV3", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
+                new HoaDon {IdHoaDon = "HD4", IDKhachHang = "KH03", IDNhanVien = "NV4", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
+                new HoaDon {IdHoaDon = "HD5", IDKhachHang = "KH04", IDNhanVien = "NV6", NgayHoaDon = new DateTime(2022, 07, 07), TinhTrang = true, TienTraTruoc = 30},
 
             });
 
@@ -96,12 +99,12 @@ namespace PBL3.DAL
             });
 
             context.Books.AddRange(new Book[] { 
-                new Book {IdBook = "B1", IdKhachHang = "K1", IdNhanVien = "NV1", TienCoc = 300},
-                new Book {IdBook = "B2", IdKhachHang = "K2", IdNhanVien = "NV1", TienCoc = 0},
-                new Book {IdBook = "B3", IdKhachHang = "K2", IdNhanVien = "NV2", TienCoc = 300},
-                new Book {IdBook = "B4", IdKhachHang = "K3", IdNhanVien = "NV3", TienCoc = 0},
-                new Book {IdBook = "B5", IdKhachHang = "K4", IdNhanVien = "NV4", TienCoc = 300},
-                new Book {IdBook = "B6", IdKhachHang = "K5", IdNhanVien = "NV6", TienCoc = 0},
+                new Book {IdBook = "B1", IdKhachHang = "KH01", IdNhanVien = "NV1", TienCoc = 300},
+                new Book {IdBook = "B2", IdKhachHang = "KH02", IdNhanVien = "NV1", TienCoc = 0},
+                new Book {IdBook = "B3", IdKhachHang = "KH03", IdNhanVien = "NV2", TienCoc = 300},
+                new Book {IdBook = "B4", IdKhachHang = "KH04", IdNhanVien = "NV3", TienCoc = 0},
+                new Book {IdBook = "B5", IdKhachHang = "KH05", IdNhanVien = "NV4", TienCoc = 300},
+                new Book {IdBook = "B6", IdKhachHang = "KH06", IdNhanVien = "NV6", TienCoc = 0},
 
             });
 

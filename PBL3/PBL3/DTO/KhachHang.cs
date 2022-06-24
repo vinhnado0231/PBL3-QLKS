@@ -20,9 +20,9 @@ namespace PBL3.DTO
         [Required]
         public string Ten { get; set; }
         public bool GioiTinh { get; set; }
+        public DateTime NgaySinh { get; set; }
         [Required]
         public string CMND { get; set; }
-
         public string SDT { get; set; }
         [Required]
         public string QuocTich { get; set; }

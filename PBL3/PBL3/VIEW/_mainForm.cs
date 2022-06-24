@@ -28,7 +28,6 @@ namespace PBL3
         {
             InitializeComponent();
             InitGUI();
-            qlks.Phongs.Select(p => p);
         }
         public void InitGUI()
         {

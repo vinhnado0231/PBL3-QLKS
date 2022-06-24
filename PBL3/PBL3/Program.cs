@@ -1,4 +1,5 @@
-﻿using PBL3.VIEW;
+﻿using PBL3.DAL;
+using PBL3.VIEW;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace PBL3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new _mainForm());
+            QLKS db = new QLKS();
+            Application.Run(new QLNguoiDung());
         }
     }
 }

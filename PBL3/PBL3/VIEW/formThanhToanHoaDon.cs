@@ -49,23 +49,24 @@ namespace PBL3.VIEW
 
 
             HoaDon data = ThanhToanHoaDon_BLL.Instance.GetHoaDonByIdPhong(IdPhong);
+            ChiTietThuePhong chiTietThuePhong = ThanhToanHoaDon_BLL.Instance.GetChiTietThuePhongByIdPhong(IdPhong);
 
             lbMaHoaDon.Text = data.IdHoaDon.ToString();
             lbMaKhachHang.Text = data.IDKhachHang.ToString();
             lbTenKhachHang.Text = data.KhachHang.Ten.ToString();
-            lbTenPhong.Text = ThanhToanHoaDon_BLL.Instance.GetChiTietThuePhongByIdPhong(IdPhong).Phong.TenPhong;
+            lbTenPhong.Text = chiTietThuePhong.Phong.TenPhong;
             lbNhanVien.Text = data.NhanVien.Ten.ToString();
             lbNgayLap.Text = data.NgayHoaDon.ToString();
-            lbNgayThue.Text = ThanhToanHoaDon_BLL.Instance.GetChiTietThuePhongByIdPhong(IdPhong).NgayCheckIn.ToString();
-            lbNgayTra.Text = ThanhToanHoaDon_BLL.Instance.GetChiTietThuePhongByIdPhong(IdPhong).NgayCheckOut.ToString();
-            lbGiaPhong.Text = ThanhToanHoaDon_BLL.Instance.GetChiTietThuePhongByIdPhong(IdPhong).Phong.DonGiaPhong.ToString();
+            lbNgayThue.Text = chiTietThuePhong.NgayCheckIn.ToString();
+            lbNgayTra.Text = chiTietThuePhong.NgayCheckOut.ToString();
+            lbGiaPhong.Text = chiTietThuePhong.Phong.DonGiaPhong.ToString();
 
             int TongtienDV = 0;
-            foreach (ThanhToanDichVuView i in ThanhToanHoaDon_BLL.Instance.GetThanhToanDVView(IdPhong))
+            List<ThanhToanDichVuView> listThanhToanPhongView = ThanhToanHoaDon_BLL.Instance.GetThanhToanDVView(IdPhong);
+            foreach (ThanhToanDichVuView i in listThanhToanPhongView)
             {
                 TongtienDV += i.TongTien;
             }
-
             lbTongGiaDV.Text = TongtienDV.ToString();
             lbTienTraTruoc.Text = data.TienTraTruoc.ToString();
             lbTongTien.Text = (Convert.ToInt32(lbGiaPhong.Text) + TongtienDV + data.TienTraTruoc).ToString();
@@ -88,11 +89,9 @@ namespace PBL3.VIEW
                     cbbTenDV.SelectedItem = i;
                 }
             }
-            cbbTenDV.Enabled = false;
             txtSoLuong.Text = data.SoLuong.ToString();
             txtDonGia.Text = data.DonGia.ToString();
             dateTimePicker1.Value = data.NgaySuDung;
-            dateTimePicker1.Enabled = false;
         }
 
         private void btnDatLaiTxt_Click(object sender, EventArgs e)
@@ -123,7 +122,7 @@ namespace PBL3.VIEW
         {
             try
             {
-                if (txtSoLuong.Text == "" || cbbTenDV.SelectedItem == null)
+                if (cbbTenDV.SelectedItem == null)
                 {
                     MessageBox.Show("Lỗi nhập thông tin");
                     return;
@@ -143,7 +142,7 @@ namespace PBL3.VIEW
                     SoLuong = Convert.ToInt32(txtSoLuong.Text),
                     TrangThai = false,
                 });
-                this.btnDatLaiTxt_Click(sender, e);
+                btnDatLaiTxt_Click(sender, e);
                 ShowView();
             }
             catch (Exception ex) {
@@ -157,8 +156,12 @@ namespace PBL3.VIEW
             if (dataGridView.SelectedRows.Count == 1)
             {
                 ThanhToanDichVuView data = (ThanhToanDichVuView)dataGridView.SelectedRows[0].DataBoundItem;
-                ThanhToanHoaDon_BLL.Instance.UpdateChiTietDichVu(data.MaDichVu, Convert.ToInt32(txtSoLuong.Text), IdPhong, data.NgaySuDung);
+                data.MaDichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString();
+                data.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                data.NgaySuDung = Convert.ToDateTime(dateTimePicker1.Value.Date);
+                ThanhToanHoaDon_BLL.Instance.UpdateChiTietDichVu(data, IdPhong);
                 ShowView();
+                btnDatLaiTxt_Click(sender, e);
             }
 
         }

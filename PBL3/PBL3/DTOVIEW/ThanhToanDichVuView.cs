@@ -8,6 +8,7 @@ namespace PBL3.DTOVIEW
 {
     public class ThanhToanDichVuView
     {
+        public int MaChiTietDV { get; set; }
         public string MaDichVu { get; set; }
         public string TenDichVu { get; set; }
         public string DonGia { get; set; }

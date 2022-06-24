@@ -79,7 +79,6 @@ namespace PBL3.VIEW
             {
                 list[i].Value = temp.GetType().GetProperties()[i].Name;
             }
-
             foreach (CBBItem item in list)
             {
 

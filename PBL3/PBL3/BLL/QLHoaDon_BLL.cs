@@ -27,30 +27,11 @@ namespace PBL3.BLL
         }
 
 
-
-        public List<ChiTietThuePhong> GetAllChiTietThuePhong()
-        {
-            return QLKS.Instance.ChiTietThuePhongs.Select(p => p).ToList();
-        }
-        public List<ChiTietSuDungDichVu> GetAllChiTietDichVu()
-        {
-            return QLKS.Instance.ChiTietSuDungDichVus.Select(p => p).ToList();
-        }
-
-        public List<ChiTietThuePhong> getAllChiTietThuePhongByIDHoaDon(string idHoaDon)
-        {
-            return QLKS.Instance.ChiTietThuePhongs.Where(p => p.IDHoaDon == idHoaDon).ToList();
-        }
-
-        public List<ChiTietSuDungDichVu> getAllChiTietDVByIDHoaDon(string idHoaDon)
-        {
-            return QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_HoaDon == idHoaDon).ToList();
-        }
-
         public int TongTienPhongByIdHoaDon(string idHoaDon)
         {
             int sum = 0;
-            foreach (ChiTietThuePhong i in getAllChiTietThuePhongByIDHoaDon(idHoaDon))
+            List<ChiTietThuePhong> chiTietThuePhongs = QLKS.Instance.ChiTietThuePhongs.Where(p => p.IDHoaDon == idHoaDon).ToList();
+            foreach (ChiTietThuePhong i in chiTietThuePhongs)
             {
                 TimeSpan Ngay = Convert.ToDateTime(i.NgayCheckOut) - Convert.ToDateTime(i.NgayCheckIn);
                 sum += Convert.ToInt32(i.Phong.DonGiaPhong) * Convert.ToInt32(Ngay.Days);
@@ -61,7 +42,8 @@ namespace PBL3.BLL
         public int TongTienDVByIdHoaDon(string idHoaDon)
         {
             int sum = 0;
-            foreach (ChiTietSuDungDichVu i in getAllChiTietDVByIDHoaDon(idHoaDon))
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_HoaDon == idHoaDon).ToList();
+            foreach (ChiTietSuDungDichVu i in chiTietSuDungDichVus)
             {
                 sum += Convert.ToInt32(i.DichVu.DonGia) * i.SoLuong;
             }
@@ -110,8 +92,6 @@ namespace PBL3.BLL
 
         public void AddHoaDonView(List<HoaDonView> data, HoaDon i)
         {
-            
-
             data.Add(new HoaDonView
             {
                 IdHoaDon = i.IdHoaDon,
@@ -131,25 +111,29 @@ namespace PBL3.BLL
         public List<ChiTietThuePhongView> getAllChiTietThuePhongView(string idHoaDon)
         {
             List<ChiTietThuePhongView> data = new List<ChiTietThuePhongView>();
-            foreach (ChiTietThuePhong i in getAllChiTietThuePhongByIDHoaDon(idHoaDon))
-            {
-                data.Add(new ChiTietThuePhongView { 
-                    MaPhong = i.IDPhong,
-                    TenPhong = i.Phong.TenPhong,
-                    NgayThue = Convert.ToDateTime(i.NgayCheckIn),
-                    NgayTra = Convert.ToDateTime(i.NgayCheckOut),
-                    DonGiaPhong = Convert.ToInt32(i.Phong.DonGiaPhong),
-                    TienPhong = Convert.ToInt32(i.Phong.DonGiaPhong) * (Convert.ToDateTime(i.NgayCheckOut) - Convert.ToDateTime(i.NgayCheckIn)).Days,
-                });
-            }
+            List<ChiTietThuePhong> chiTietThuePhongs = QLKS.Instance.ChiTietThuePhongs.Where(p => p.IDHoaDon == idHoaDon).ToList();
+            chiTietThuePhongs.ForEach(p => AddThuePhongView(data, p));
             return data;
         }
 
+        public void AddThuePhongView(List<ChiTietThuePhongView> data, ChiTietThuePhong i)
+        {
+            data.Add(new ChiTietThuePhongView
+            {
+                MaPhong = i.IDPhong,
+                TenPhong = i.Phong.TenPhong,
+                NgayThue = Convert.ToDateTime(i.NgayCheckIn),
+                NgayTra = Convert.ToDateTime(i.NgayCheckOut),
+                DonGiaPhong = Convert.ToInt32(i.Phong.DonGiaPhong),
+                TienPhong = Convert.ToInt32(i.Phong.DonGiaPhong) * (Convert.ToDateTime(i.NgayCheckOut) - Convert.ToDateTime(i.NgayCheckIn)).Days,
+            });
+        }
 
         public List<ChiTietDichVuView> getAllChiTietDVView(string idHoaDon)
         {
             List<ChiTietDichVuView> data = new List<ChiTietDichVuView> ();
-            foreach (ChiTietSuDungDichVu i in getAllChiTietDVByIDHoaDon(idHoaDon)) {
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_HoaDon == idHoaDon).ToList();
+            foreach (ChiTietSuDungDichVu i in chiTietSuDungDichVus) {
                 data.Add(new ChiTietDichVuView { 
                     MaDichVu = i.ID_DichVu,
                     TenDichVu = i.DichVu.TenDichVu,

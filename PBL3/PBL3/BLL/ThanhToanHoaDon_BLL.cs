@@ -25,10 +25,6 @@ namespace PBL3.BLL
             set { }
         }
 
-        public List<HoaDon> GetAllHoaDon()
-        {
-            return QLKS.Instance.HoaDons.Select(p => p).ToList();
-        }
 
         public ChiTietBook GetChiTietBookByIdPhong(string IdPhong)
         {
@@ -47,12 +43,13 @@ namespace PBL3.BLL
 
         public HoaDon GetHoaDonByIdPhong(string IdPhong)
         {
-            foreach (var hoaDon in GetAllHoaDon())
+            List<HoaDon> hoaDons = QLKS.Instance.HoaDons.Select(p => p).ToList();
+            foreach (HoaDon hoaDon in hoaDons)
             {
-                if (hoaDon.ChiTietThuePhongs.Where(p => p.IDPhong == IdPhong && p.TrangThai == false) != null)
+                if (hoaDon.ChiTietSuDungDichVus.Where(a => a.ID_Phong == IdPhong && a.TrangThai == false) != null)
                 {
                     return hoaDon;
-                };
+                }
             }
             return null;
         }
@@ -62,17 +59,12 @@ namespace PBL3.BLL
             return QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong && p.TrangThai == false).Select(p => p.DichVu).ToList();
         }
 
-        public List<ChiTietSuDungDichVu> GetAllCTDichVuByIdPhong(string IdPhong)
-        {
-            return QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong && p.TrangThai == false).ToList();
-        }
-
         public ChiTietSuDungDichVu GetCtSDDVByIdPhong(string IdPhong)
         {
             return QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong).FirstOrDefault();
         }
 
-        public string GetLastIdChiTietDichVu()
+        public int GetLastIdChiTietDichVu()
         {
             return QLKS.Instance.ChiTietSuDungDichVus.Select(p => p.ID_ChiTietSuDungDichVu).ToList().LastOrDefault();
         }
@@ -90,7 +82,8 @@ namespace PBL3.BLL
         public List<ThanhToanDichVuView> GetThanhToanDVView(string IdPhong)
         {
             List<ThanhToanDichVuView> data = new List<ThanhToanDichVuView>();
-            foreach (ChiTietSuDungDichVu i in GetAllCTDichVuByIdPhong(IdPhong))
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong && p.TrangThai == false).ToList();
+            foreach (ChiTietSuDungDichVu i in chiTietSuDungDichVus)
             {
                 data.Add(new ThanhToanDichVuView { MaDichVu = i.ID_DichVu, DonGia = i.DichVu.DonGia, 
                     NgaySuDung = Convert.ToDateTime(i.NgaySuDung), SoLuong = i.SoLuong,
@@ -102,7 +95,8 @@ namespace PBL3.BLL
 
         public void UpdateChiTietDichVu(string IdDichVu, int SoLuong, string IdPhong, DateTime NgaySuDung) 
         {
-            foreach (ChiTietSuDungDichVu i in GetAllCTDichVuByIdPhong(IdPhong))
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong && p.TrangThai == false).ToList();
+            foreach (ChiTietSuDungDichVu i in chiTietSuDungDichVus)
             {
                 if (i.ID_DichVu == IdDichVu && i.NgaySuDung == NgaySuDung)
                 {
@@ -112,15 +106,36 @@ namespace PBL3.BLL
             QLKS.Instance.SaveChanges();
         }
 
+        public bool checkData(string IdDV, DateTime NgaySd)
+        {
+            if (QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_DichVu == IdDV && p.NgaySuDung == NgaySd.Date).Select(p => p).FirstOrDefault() != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public void AddChiTietDichVu(ChiTietSuDungDichVu ctdv)
         {
             QLKS.Instance.ChiTietSuDungDichVus.Add(ctdv);
             QLKS.Instance.SaveChanges();
         }
 
-        public void DelChiTietDicVu(ChiTietSuDungDichVu ctdv)
+        public void DelChiTietDichVu(List<ThanhToanDichVuView> list, string IdPhong)
         {
-            QLKS.Instance.ChiTietSuDungDichVus.Remove(ctdv);
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong && p.TrangThai == false).ToList();
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVusDel = new List<ChiTietSuDungDichVu>();
+            foreach (ChiTietSuDungDichVu i in chiTietSuDungDichVus)
+            {
+                foreach (ThanhToanDichVuView j in list)
+                {
+                    if (i.ID_DichVu == j.MaDichVu && i.NgaySuDung == j.NgaySuDung)
+                    {
+                        chiTietSuDungDichVusDel.Add(i);
+                    }
+                }
+            }
+            QLKS.Instance.ChiTietSuDungDichVus.RemoveRange(chiTietSuDungDichVusDel);
             QLKS.Instance.SaveChanges();
         }
     }

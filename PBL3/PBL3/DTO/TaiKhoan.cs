@@ -10,15 +10,18 @@ namespace PBL3.DTO
 {
     public class TaiKhoan
     {
-        [Key, StringLength(50), Required]
-        public string TenDangNhap { get; set; }
+        public TaiKhoan()
+        {
+            this.NhanViens = new HashSet<NhanVien>();
+        }
+        [Key, StringLength(10), Required]
+        public string IdTaiKhoan { get; set; }
         [StringLength(10), Required]
-        public string IdNhanVien { get; set; }
+        public string TenDangNhap { get; set; }
         [Required]
         public string MatKhau { get; set; }
         [Required]
         public bool TrangThai { get; set; }
-        [ForeignKey("IdNhanVien")]
-        public virtual NhanVien NhanVien { get; set; }
+        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }

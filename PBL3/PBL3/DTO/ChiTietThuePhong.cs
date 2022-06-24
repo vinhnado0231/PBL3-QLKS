@@ -10,8 +10,8 @@ namespace PBL3.DTO
 {
     public class ChiTietThuePhong
     {
-        [Key, StringLength(10), Required]
-        public string IdChiTietThuePhong { get; set; }
+        [Key, Required]
+        public int IdChiTietThuePhong { get; set; }
         [StringLength(10), Required]
         public string IDHoaDon { get; set; }
         [StringLength(10), Required]

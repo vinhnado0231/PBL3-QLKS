@@ -35,6 +35,14 @@ namespace PBL3.VIEW
             }
         }
 
+        public void SetSTT()
+        {
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                dataGridView.Rows[i].Cells["STT"].Value = i + 1;
+            }
+        }
+
         public void ShowView()
         {
             dataGridView.DataSource = ThanhToanHoaDon_BLL.Instance.GetThanhToanDVView(IdPhong).ToList();
@@ -61,11 +69,11 @@ namespace PBL3.VIEW
             lbTongGiaDV.Text = TongtienDV.ToString();
             lbTienTraTruoc.Text = data.TienTraTruoc.ToString();
             lbTongTien.Text = (Convert.ToInt32(lbGiaPhong.Text) + TongtienDV + data.TienTraTruoc).ToString();
+            SetSTT();
         }
 
         private void formThanhToanHoaDon_Load(object sender, EventArgs e)
         {
-
             ShowView();
         }
 
@@ -83,17 +91,14 @@ namespace PBL3.VIEW
             cbbTenDV.Enabled = false;
             txtSoLuong.Text = data.SoLuong.ToString();
             txtDonGia.Text = data.DonGia.ToString();
-
             dateTimePicker1.Value = data.NgaySuDung;
             dateTimePicker1.Enabled = false;
         }
 
         private void btnDatLaiTxt_Click(object sender, EventArgs e)
         {
-            txtMaDichVu.Text = "";
             cbbTenDV.Enabled = true;
             txtSoLuong.Text = "";
-            txtDonGia.Text = "";
             dateTimePicker1.Value = DateTime.Now;
             dateTimePicker1.Enabled = true;
         }
@@ -107,17 +112,7 @@ namespace PBL3.VIEW
                 {
                     data.Add((ThanhToanDichVuView)row.DataBoundItem);
                 }
-
-                foreach (ChiTietSuDungDichVu i in ThanhToanHoaDon_BLL.Instance.GetAllCTDichVuByIdPhong(IdPhong))
-                {
-                    foreach (ThanhToanDichVuView j in data)
-                    {
-                        if (i.ID_DichVu == j.MaDichVu && i.NgaySuDung == j.NgaySuDung)
-                        {
-                            ThanhToanHoaDon_BLL.Instance.DelChiTietDicVu(i);
-                        }
-                    }
-                }
+                ThanhToanHoaDon_BLL.Instance.DelChiTietDichVu(data, IdPhong);
             }
             this.btnDatLaiTxt_Click(sender, e);
             ShowView();
@@ -126,34 +121,35 @@ namespace PBL3.VIEW
 
         private void btnAddDV_Click(object sender, EventArgs e)
         {
-
-            if (txtSoLuong.Text == "" || cbbTenDV.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Nhập thiếu thông tin");
-                return;
-            }
-
-            foreach (ChiTietSuDungDichVu i in ThanhToanHoaDon_BLL.Instance.GetAllCTDichVuByIdPhong(IdPhong))
-            {
-                if (((CBBItem)cbbTenDV.SelectedItem).Value == i.ID_DichVu && dateTimePicker1.Value.Date == i.NgaySuDung)
+                if (txtSoLuong.Text == "" || cbbTenDV.SelectedItem == null)
+                {
+                    MessageBox.Show("Lỗi nhập thông tin");
+                    return;
+                }
+                if (ThanhToanHoaDon_BLL.Instance.checkData(((CBBItem)cbbTenDV.SelectedItem).Value, dateTimePicker1.Value))
                 {
                     MessageBox.Show("Dịch vụ đã có trong danh sách");
                     return;
                 }
-            }
 
-            ThanhToanHoaDon_BLL.Instance.AddChiTietDichVu(new ChiTietSuDungDichVu
-            {
-                ID_ChiTietSuDungDichVu = "CTDV" + (ThanhToanHoaDon_BLL.Instance.GetAllChiTietSDDV().Count + 1),
-                ID_Phong = IdPhong.ToString(),
-                ID_DichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString(),
-                ID_HoaDon = ThanhToanHoaDon_BLL.Instance.GetHoaDonByIdPhong(IdPhong).IdHoaDon.ToString(),
-                NgaySuDung = Convert.ToDateTime(dateTimePicker1.Value),
-                SoLuong = Convert.ToInt32(txtSoLuong.Text),
-                TrangThai = false,
-            });
-            this.btnDatLaiTxt_Click(sender, e);
-            ShowView();
+                ThanhToanHoaDon_BLL.Instance.AddChiTietDichVu(new ChiTietSuDungDichVu
+                {
+                    ID_Phong = IdPhong.ToString(),
+                    ID_DichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString(),
+                    ID_HoaDon = ThanhToanHoaDon_BLL.Instance.GetHoaDonByIdPhong(IdPhong).IdHoaDon.ToString(),
+                    NgaySuDung = Convert.ToDateTime(dateTimePicker1.Value.Date),
+                    SoLuong = Convert.ToInt32(txtSoLuong.Text),
+                    TrangThai = false,
+                });
+                this.btnDatLaiTxt_Click(sender, e);
+                ShowView();
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Lỗi nhập thông tin");
+            }
+            
         }
 
         private void btnEditDV_Click(object sender, EventArgs e)
@@ -170,9 +166,9 @@ namespace PBL3.VIEW
         private void cbbTenDV_SelectedIndexChanged(object sender, EventArgs e)
         {
             string IdDichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString();
-
-            txtDonGia.Text = ThanhToanHoaDon_BLL.Instance.GetDichVuByIdDV(IdDichVu).DonGia.ToString();
-            txtMaDichVu.Text = ThanhToanHoaDon_BLL.Instance.GetDichVuByIdDV(IdDichVu).IdDichVu.ToString();
+            DichVu dv = ThanhToanHoaDon_BLL.Instance.GetDichVuByIdDV(IdDichVu);
+            txtDonGia.Text = dv.DonGia.ToString();
+            txtMaDichVu.Text = dv.IdDichVu.ToString();
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)

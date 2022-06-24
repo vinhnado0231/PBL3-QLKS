@@ -13,8 +13,8 @@ namespace PBL3.DTO
 
         [StringLength(10), Required]
         public string IdPhong { get; set; }
-        [Key, StringLength(10), Required]
-        public string IdChiTietBook { get; set; }
+        [Key, Required]
+        public int IdChiTietBook { get; set; }
         [StringLength(10), Required]
         public string IdBook { get; set; }
         [Required]

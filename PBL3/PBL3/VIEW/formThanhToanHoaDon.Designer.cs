@@ -28,24 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formThanhToanHoaDon));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbTenDV = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaDichVu = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.btnDatLaiTxt = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnXoaDV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnEditDV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,16 +88,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnThanhToan = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lbInHoaDon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.cbbTenDV = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMaDichVu = new System.Windows.Forms.TextBox();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -113,37 +113,46 @@
             this.groupBox1.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.groupBox1.Location = new System.Drawing.Point(12, 227);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1653, 336);
+            this.groupBox1.Size = new System.Drawing.Size(1696, 336);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chi tiết dịch vụ";
+            // 
+            // cbbTenDV
+            // 
+            this.cbbTenDV.FormattingEnabled = true;
+            this.cbbTenDV.Location = new System.Drawing.Point(105, 125);
+            this.cbbTenDV.Name = "cbbTenDV";
+            this.cbbTenDV.Size = new System.Drawing.Size(186, 24);
+            this.cbbTenDV.TabIndex = 33;
+            this.cbbTenDV.SelectedIndexChanged += new System.EventHandler(this.cbbTenDV_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(427, 183);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(223, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(255, 22);
             this.dateTimePicker1.TabIndex = 32;
             // 
             // dataGridView
             // 
             this.dataGridView.AllowCustomTheming = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.Color.Azure;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ColumnHeadersHeight = 40;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt,
@@ -171,20 +180,20 @@
             this.dataGridView.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
             this.dataGridView.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(178)))), ((int)(((byte)(178)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
             this.dataGridView.HeaderBackColor = System.Drawing.Color.Teal;
             this.dataGridView.HeaderBgColor = System.Drawing.Color.Empty;
             this.dataGridView.HeaderForeColor = System.Drawing.Color.White;
-            this.dataGridView.Location = new System.Drawing.Point(666, 35);
+            this.dataGridView.Location = new System.Drawing.Point(711, 22);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
@@ -195,6 +204,71 @@
             this.dataGridView.TabIndex = 31;
             this.dataGridView.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Teal;
             this.dataGridView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseDoubleClick);
+            // 
+            // stt
+            // 
+            this.stt.DataPropertyName = "stt";
+            this.stt.FillWeight = 40F;
+            this.stt.HeaderText = "STT";
+            this.stt.MinimumWidth = 6;
+            this.stt.Name = "stt";
+            this.stt.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "MaDichVu";
+            this.Column4.HeaderText = "Mã dịch vụ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TenDichVu";
+            this.Column1.HeaderText = "Tên dịch vụ";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // d
+            // 
+            this.d.DataPropertyName = "DonGia";
+            this.d.HeaderText = "Đơn giá";
+            this.d.MinimumWidth = 6;
+            this.d.Name = "d";
+            this.d.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SoLuong";
+            this.Column2.HeaderText = "Số lượng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Ngay
+            // 
+            this.Ngay.DataPropertyName = "NgaySuDung";
+            this.Ngay.HeaderText = "Ngày sử dụng";
+            this.Ngay.MinimumWidth = 6;
+            this.Ngay.Name = "Ngay";
+            this.Ngay.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TongTien";
+            this.Column3.HeaderText = "Tổng tiền";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // txtMaDichVu
+            // 
+            this.txtMaDichVu.Location = new System.Drawing.Point(105, 67);
+            this.txtMaDichVu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaDichVu.Name = "txtMaDichVu";
+            this.txtMaDichVu.Size = new System.Drawing.Size(186, 22);
+            this.txtMaDichVu.TabIndex = 25;
             // 
             // txtSoLuong
             // 
@@ -219,7 +293,7 @@
             this.txtDonGia.Location = new System.Drawing.Point(427, 67);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(223, 22);
+            this.txtDonGia.Size = new System.Drawing.Size(255, 22);
             this.txtDonGia.TabIndex = 25;
             // 
             // btnDatLaiTxt
@@ -241,11 +315,11 @@
             this.btnDatLaiTxt.ColorContrastOnClick = 45;
             this.btnDatLaiTxt.ColorContrastOnHover = 45;
             this.btnDatLaiTxt.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnDatLaiTxt.CustomizableEdges = borderEdges1;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnDatLaiTxt.CustomizableEdges = borderEdges7;
             this.btnDatLaiTxt.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDatLaiTxt.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDatLaiTxt.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -331,11 +405,11 @@
             this.btnXoaDV.ColorContrastOnClick = 45;
             this.btnXoaDV.ColorContrastOnHover = 45;
             this.btnXoaDV.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btnXoaDV.CustomizableEdges = borderEdges2;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.btnXoaDV.CustomizableEdges = borderEdges8;
             this.btnXoaDV.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnXoaDV.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnXoaDV.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -402,6 +476,16 @@
             this.btnXoaDV.UseDefaultRadiusAndThickness = true;
             this.btnXoaDV.Click += new System.EventHandler(this.btnXoaDV_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
+            this.label5.Location = new System.Drawing.Point(11, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 16);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Mã dịch vụ";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -431,11 +515,11 @@
             this.btnEditDV.ColorContrastOnClick = 45;
             this.btnEditDV.ColorContrastOnHover = 45;
             this.btnEditDV.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnEditDV.CustomizableEdges = borderEdges3;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.btnEditDV.CustomizableEdges = borderEdges9;
             this.btnEditDV.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEditDV.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnEditDV.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -531,11 +615,11 @@
             this.btnAddDV.ColorContrastOnClick = 45;
             this.btnAddDV.ColorContrastOnHover = 45;
             this.btnAddDV.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnAddDV.CustomizableEdges = borderEdges4;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.btnAddDV.CustomizableEdges = borderEdges10;
             this.btnAddDV.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddDV.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAddDV.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -917,11 +1001,11 @@
             this.btnThanhToan.ColorContrastOnClick = 45;
             this.btnThanhToan.ColorContrastOnHover = 45;
             this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnThanhToan.CustomizableEdges = borderEdges5;
+            borderEdges11.BottomLeft = true;
+            borderEdges11.BottomRight = true;
+            borderEdges11.TopLeft = true;
+            borderEdges11.TopRight = true;
+            this.btnThanhToan.CustomizableEdges = borderEdges11;
             this.btnThanhToan.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnThanhToan.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThanhToan.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1007,11 +1091,11 @@
             this.lbInHoaDon.ColorContrastOnClick = 45;
             this.lbInHoaDon.ColorContrastOnHover = 45;
             this.lbInHoaDon.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.lbInHoaDon.CustomizableEdges = borderEdges6;
+            borderEdges12.BottomLeft = true;
+            borderEdges12.BottomRight = true;
+            borderEdges12.TopLeft = true;
+            borderEdges12.TopRight = true;
+            this.lbInHoaDon.CustomizableEdges = borderEdges12;
             this.lbInHoaDon.DialogResult = System.Windows.Forms.DialogResult.None;
             this.lbInHoaDon.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.lbInHoaDon.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1077,95 +1161,11 @@
             this.lbInHoaDon.TextPadding = new System.Windows.Forms.Padding(0);
             this.lbInHoaDon.UseDefaultRadiusAndThickness = true;
             // 
-            // cbbTenDV
-            // 
-            this.cbbTenDV.FormattingEnabled = true;
-            this.cbbTenDV.Location = new System.Drawing.Point(105, 125);
-            this.cbbTenDV.Name = "cbbTenDV";
-            this.cbbTenDV.Size = new System.Drawing.Size(186, 24);
-            this.cbbTenDV.TabIndex = 33;
-            this.cbbTenDV.SelectedIndexChanged += new System.EventHandler(this.cbbTenDV_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(139)))), ((int)(((byte)(99)))));
-            this.label5.Location = new System.Drawing.Point(11, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 16);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Mã dịch vụ";
-            // 
-            // txtMaDichVu
-            // 
-            this.txtMaDichVu.Location = new System.Drawing.Point(105, 67);
-            this.txtMaDichVu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMaDichVu.Name = "txtMaDichVu";
-            this.txtMaDichVu.Size = new System.Drawing.Size(186, 22);
-            this.txtMaDichVu.TabIndex = 25;
-            // 
-            // stt
-            // 
-            this.stt.DataPropertyName = "stt";
-            this.stt.FillWeight = 40F;
-            this.stt.HeaderText = "STT";
-            this.stt.MinimumWidth = 6;
-            this.stt.Name = "stt";
-            this.stt.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "MaDichVu";
-            this.Column4.HeaderText = "Mã dịch vụ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "TenDichVu";
-            this.Column1.HeaderText = "Tên dịch vụ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // d
-            // 
-            this.d.DataPropertyName = "DonGia";
-            this.d.HeaderText = "Đơn giá";
-            this.d.MinimumWidth = 6;
-            this.d.Name = "d";
-            this.d.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "SoLuong";
-            this.Column2.HeaderText = "Số lượng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Ngay
-            // 
-            this.Ngay.DataPropertyName = "NgaySuDung";
-            this.Ngay.HeaderText = "Ngày sử dụng";
-            this.Ngay.MinimumWidth = 6;
-            this.Ngay.Name = "Ngay";
-            this.Ngay.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "TongTien";
-            this.Column3.HeaderText = "Tổng tiền";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
             // formThanhToanHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1669, 567);
+            this.ClientSize = new System.Drawing.Size(1924, 567);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbInHoaDon);

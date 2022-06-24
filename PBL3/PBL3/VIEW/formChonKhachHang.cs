@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace PBL3.VIEW
         public formChonKhachHang()
         {
             InitializeComponent();
+            dataGridView1.DataSource = BLL_ChonKhachHang.Instance.getAllKhachHang();
+            comboBox1.SelectedIndex = 0;
         }
 
         private void butOK_Click(object sender, EventArgs e)
@@ -28,6 +31,24 @@ namespace PBL3.VIEW
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void getKHBySearch()
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                dataGridView1.DataSource = BLL_ChonKhachHang.Instance.searchbyName(txtSearch.Text);
+            }else if (comboBox1.SelectedIndex == 1)
+            {
+                dataGridView1.DataSource = BLL_ChonKhachHang.Instance.searchbySDT(txtSearch.Text);
+            }
+            else
+            {
+                dataGridView1.DataSource = BLL_ChonKhachHang.Instance.searchbyCMND(txtSearch.Text);
+            }
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            getKHBySearch();
         }
     }
 }

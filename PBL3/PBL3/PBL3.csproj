@@ -98,10 +98,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL_ChonKhachHang.cs" />
+    <Compile Include="BLL\BLL_ThuePhong.cs" />
+    <Compile Include="BLL\BLL_TimPhongDeThue.cs" />
+    <Compile Include="BLL\TimeLine_BLL.cs" />
     <Compile Include="DAL\CreateDB.cs" />
     <Compile Include="DAL\QLKS.cs" />
     <Compile Include="DTOVIEW\CBBItem.cs" />
     <Compile Include="DTOVIEW\CBBItemPhong.cs" />
+    <Compile Include="DTOVIEW\DichVuPhongView.cs" />
     <Compile Include="DTOVIEW\DichVuView.cs" />
     <Compile Include="DTOVIEW\DoThatLacView.cs" />
     <Compile Include="DTOVIEW\KhachHangView.cs" />
@@ -109,11 +114,13 @@
     <Compile Include="DTO\Book.cs" />
     <Compile Include="DTO\ChiTietBook.cs" />
     <Compile Include="DTO\ChiTietSuDungDichVu.cs" />
+    <Compile Include="DTO\ChiTietThuePhong.cs" />
     <Compile Include="DTO\ChucVu.cs" />
     <Compile Include="DTO\HoaDon.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LamHu.cs" />
     <Compile Include="DTO\DichVu.cs" />
+    <Compile Include="DTO\LichSuDangNhap.cs" />
     <Compile Include="DTO\LoaiPhong.cs" />
     <Compile Include="DTO\LoaiVatDung.cs" />
     <Compile Include="DTO\NhanVien.cs" />
@@ -189,6 +196,12 @@
     <Compile Include="VIEW\QLNguoiDung.Designer.cs">
       <DependentUpon>QLNguoiDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\TimPhongDeThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\TimPhongDeThue.Designer.cs">
+      <DependentUpon>TimPhongDeThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\_formHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +257,9 @@
     <EmbeddedResource Include="VIEW\QLNguoiDung.resx">
       <DependentUpon>QLNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\TimPhongDeThue.resx">
+      <DependentUpon>TimPhongDeThue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\_formHome.resx">
       <DependentUpon>_formHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,8 +280,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PBL3.DTO;
 using PBL3.DTOVIEW;
 using PBL3.DAL;
+using System.Reflection;
 
 namespace PBL3.BLL
 {
@@ -25,10 +26,7 @@ namespace PBL3.BLL
             set { }
         }
 
-        public List<HoaDon> GetAllHoaDon()
-        {
-            return QLKS.Instance.HoaDons.Select(p => p).ToList();
-        }
+
 
         public List<ChiTietThuePhong> GetAllChiTietThuePhong()
         {
@@ -74,70 +72,26 @@ namespace PBL3.BLL
 
         public List<HoaDonView> getAllHoaDonView(string txt, string loaiTimKiem, DateTime From, DateTime To)
         {
+            Console.WriteLine(loaiTimKiem);
             List<HoaDonView> data = new List<HoaDonView>();
-            if (From != new DateTime() && To != new DateTime())
+            List<HoaDon> hoaDons = QLKS.Instance.HoaDons.Select(p => p).ToList();
+            List<HoaDon> hoaDonSearchAll = hoaDons.Where(p => p.GetType().GetProperties().GetValue(10).ToString().Contains(txt)).ToList();
+
+            if (loaiTimKiem != "" && txt != "")
             {
-
-
-                if (loaiTimKiem == "Mã hóa đơn")
-                {
-                    foreach (HoaDon i in GetAllHoaDon())
-                    {
-                        if (i.IdHoaDon.Contains(txt))
-                        {
-                            AddHoaDonView(data, i);
-                        }
-                    }
-                }
-
-                if (loaiTimKiem == "Mã khách hàng")
-                {
-                    foreach (HoaDon i in GetAllHoaDon())
-                    {
-                        if (i.IDKhachHang.Contains(txt))
-                        {
-                            AddHoaDonView(data, i);
-                        }
-                    }
-                }
-
-                if (loaiTimKiem == "Tên khách hàng")
-                {
-                    foreach (HoaDon i in GetAllHoaDon())
-                    {
-                        if (i.KhachHang.Ten.Contains(txt))
-                        {
-                            AddHoaDonView(data, i);
-                        }
-                    }
-                }
-
-                if (loaiTimKiem == "Mã nhân viên")
-                {
-                    foreach (HoaDon i in GetAllHoaDon())
-                    {
-                        if (i.IDNhanVien.Contains(txt))
-                        {
-                            AddHoaDonView(data, i);
-                        }
-                    }
-                }
-
-                if (loaiTimKiem == "")
-                {
-                    foreach (HoaDon i in GetAllHoaDon())
-                    {
-
-
-                        AddHoaDonView(data, i);
-
-                    }
-                }
-
+                List<HoaDon> hoaDonSearchsBycbb = hoaDons.Where(p => p.GetType().GetProperty(loaiTimKiem.ToString()).GetValue(p).ToString().Contains(txt)).ToList();
+                hoaDonSearchsBycbb.ForEach(p => AddHoaDonView(data, p));
+            }
+            else if (txt != "")
+            {
+                hoaDonSearchAll.ForEach(p => AddHoaDonView(data, p));
+            }
+            else 
+            {
+                hoaDons.ForEach(p => AddHoaDonView(data, p));
             }
 
 
-           
             return data;
         }
 
@@ -147,10 +101,10 @@ namespace PBL3.BLL
 
             data.Add(new HoaDonView
             {
-                MaHoaDon = i.IdHoaDon,
-                MaKhachHang = i.IDKhachHang,
+                IdHoaDon = i.IdHoaDon,
+                IDKhachHang = i.IDKhachHang,
                 TenKhachHang = i.KhachHang.Ten,
-                MaNhanVien = i.IDNhanVien,
+                IDNhanVien = i.IDNhanVien,
                 NgayThanhToan = Convert.ToDateTime(i.NgayHoaDon),
                 TienTraTruoc = i.TienTraTruoc,
                 TienPhong = TongTienPhongByIdHoaDon(i.IdHoaDon),

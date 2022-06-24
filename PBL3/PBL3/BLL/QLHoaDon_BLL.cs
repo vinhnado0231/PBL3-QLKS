@@ -72,28 +72,41 @@ namespace PBL3.BLL
 
         public List<HoaDonView> getAllHoaDonView(string txt, string loaiTimKiem, DateTime From, DateTime To)
         {
-            Console.WriteLine(loaiTimKiem);
-            List<HoaDonView> data = new List<HoaDonView>();
+            List<HoaDonView> dataMain = new List<HoaDonView>();
             List<HoaDon> hoaDons = QLKS.Instance.HoaDons.Select(p => p).ToList();
-            List<HoaDon> hoaDonSearchAll = hoaDons.Where(p => p.GetType().GetProperties().GetValue(10).ToString().Contains(txt)).ToList();
+            hoaDons.ForEach(p => AddHoaDonView(dataMain, p));
 
-            if (loaiTimKiem != "" && txt != "")
+            if (From != new DateTime() && To != new DateTime())
             {
-                List<HoaDon> hoaDonSearchsBycbb = hoaDons.Where(p => p.GetType().GetProperty(loaiTimKiem.ToString()).GetValue(p).ToString().Contains(txt)).ToList();
-                hoaDonSearchsBycbb.ForEach(p => AddHoaDonView(data, p));
+                if (loaiTimKiem != "")
+                {
+                    List<HoaDonView> hoaDonSearchsBycbb = dataMain.Where(p => p.GetType().GetProperty(loaiTimKiem.ToString()).GetValue(p).ToString().Contains(txt)
+                                                                        && p.NgayThanhToan.Date >= From && p.NgayThanhToan.Date <= To.Date).ToList();
+                    return hoaDonSearchsBycbb;
+                }
+                else
+                {
+                    List<HoaDonView> hoaDonSearchAll = dataMain.Where(p => p.GetType().GetProperties().GetValue(p.GetType().GetProperties().Length - 1).ToString().Contains(txt)
+                                                                      && p.NgayThanhToan.Date >= From && p.NgayThanhToan.Date <= To.Date).ToList();
+                    return hoaDonSearchAll;
+                }
             }
-            else if (txt != "")
+
+            if (loaiTimKiem != "")
             {
-                hoaDonSearchAll.ForEach(p => AddHoaDonView(data, p));
+                List<HoaDonView> hoaDonSearchsBycbb = dataMain.Where(p => p.GetType().GetProperty(loaiTimKiem.ToString()).GetValue(p).ToString().Contains(txt)).ToList();
+                return hoaDonSearchsBycbb;
             }
-            else 
+            else
             {
-                hoaDons.ForEach(p => AddHoaDonView(data, p));
+                List<HoaDonView> hoaDonSearchAll = dataMain.Where(p => p.GetType().GetProperties().GetValue(p.GetType().GetProperties().Length - 1).ToString().Contains(txt)).ToList();
+                return hoaDonSearchAll;
             }
 
 
-            return data;
         }
+
+        
 
         public void AddHoaDonView(List<HoaDonView> data, HoaDon i)
         {

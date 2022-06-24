@@ -50,13 +50,6 @@ namespace PBL3.VIEW
 
         private void formQLHoaDon_Load(object sender, EventArgs e)
         {
-            List<HoaDon> hoaDons = QLKS.Instance.HoaDons.Select(p => p).ToList();
-            List<HoaDon> hoaDonSearchsBycbb = hoaDons.Where(p => p.GetType().GetProperty("IdHoaDon").GetValue(p).ToString().Contains("1")).ToList();
-            foreach (HoaDon hoaDon in hoaDonSearchsBycbb)
-            {
-                MessageBox.Show(hoaDon.IDKhachHang);
-            }
-
             showDataView("", "", new DateTime(), new DateTime());
         }
 
@@ -75,17 +68,14 @@ namespace PBL3.VIEW
 
         public void setCbb()
         {
-
-
-
             List<CBBItem> list = new List<CBBItem>();
             HoaDonView temp = new HoaDonView();
 
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < dataGridViewHoaDon.Columns.Count; i++)
             {
                 list.Add(new CBBItem { Text = dataGridViewHoaDon.Columns[i].HeaderText, Value = "" });
             }
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < temp.GetType().GetProperties().Length; i++)
             {
                 list[i].Value = temp.GetType().GetProperties()[i].Name;
             }
@@ -120,7 +110,16 @@ namespace PBL3.VIEW
 
         private void filterSearchBtn_Click(object sender, EventArgs e)
         {
-            showDataView(searchTxt.Text, ((CBBItem)searchCbb.SelectedItem).Value, dateTimeFrom.Value, dateTimeTo.Value);
+            if (searchCbb.SelectedItem == null)
+            {
+                showDataView(searchTxt.Text, "", dateTimeFrom.Value, dateTimeTo.Value);
+
+            }
+            else
+            {
+                showDataView(searchTxt.Text, ((CBBItem)searchCbb.SelectedItem).Value, dateTimeFrom.Value, dateTimeTo.Value);
+
+            }
         }
     }
 }

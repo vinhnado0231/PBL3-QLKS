@@ -21,7 +21,7 @@ namespace PBL3.DTO
         [Required]
         public string TenVatDung { get; set; }
         [Required]
-        public string DonGia { get; set; }
+        public int DonGia { get; set; }
         public virtual ICollection<VatDungPhong> VatDungPhongs { get; set; }
         public virtual ICollection<LamHu> LamHus { get; set; }
 

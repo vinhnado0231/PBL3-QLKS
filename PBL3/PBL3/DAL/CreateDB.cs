@@ -132,11 +132,11 @@ namespace PBL3.DAL
 
             context.LoaiVatDungs.AddRange(new LoaiVatDung[]
             {
-                new LoaiVatDung {IdLoaiVatDung = "L1", TenVatDung = "TV", DonGia = "1000"},
-                new LoaiVatDung {IdLoaiVatDung = "L2", TenVatDung = "Tủ lạnh", DonGia = "2000"},
-                new LoaiVatDung {IdLoaiVatDung = "L3", TenVatDung = "Điều hòa", DonGia = "3000"},
-                new LoaiVatDung {IdLoaiVatDung = "L4", TenVatDung = "Bàn", DonGia = "500"},
-                new LoaiVatDung {IdLoaiVatDung = "L5", TenVatDung = "Ghế", DonGia = "200"},
+                new LoaiVatDung {IdLoaiVatDung = "L1", TenVatDung = "TV", DonGia = 1000},
+                new LoaiVatDung {IdLoaiVatDung = "L2", TenVatDung = "Tủ lạnh", DonGia = 2000},
+                new LoaiVatDung {IdLoaiVatDung = "L3", TenVatDung = "Điều hòa", DonGia = 3000},
+                new LoaiVatDung {IdLoaiVatDung = "L4", TenVatDung = "Bàn", DonGia = 500},
+                new LoaiVatDung {IdLoaiVatDung = "L5", TenVatDung = "Ghế", DonGia = 200},
 
 
             });

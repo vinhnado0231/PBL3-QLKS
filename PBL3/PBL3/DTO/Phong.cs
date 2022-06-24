@@ -28,7 +28,7 @@ namespace PBL3.DTO
         [Required]
         public bool TrangThai { get; set; }
         [Required]
-        public string DonGiaPhong { get; set; }
+        public int DonGiaPhong { get; set; }
 
         public virtual ICollection<ChiTietBook> ChiTietBooks { get; set; }
         [ForeignKey("IdLoaiPhong")]

@@ -88,11 +88,11 @@ namespace PBL3.DAL
 
             context.ChiTietThuePhongs.AddRange(new ChiTietThuePhong[]
             {
-                new ChiTietThuePhong { IdChiTietThuePhong = 1, IDHoaDon = "HD1", IDPhong = "1P1", /* IdNhanVien = "NV1",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
-                new ChiTietThuePhong {IdChiTietThuePhong = 2, IDHoaDon = "HD1", IDPhong = "1P2", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
-                new ChiTietThuePhong {IdChiTietThuePhong = 3, IDHoaDon = "HD2", IDPhong = "1P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
-                new ChiTietThuePhong {IdChiTietThuePhong = 4, IDHoaDon = "HD3", IDPhong = "2P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false},
-                new ChiTietThuePhong {IdChiTietThuePhong = 5, IDHoaDon = "HD4", IDPhong = "1P1", /*IdNhanVien = "NV3",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = true},
+                new ChiTietThuePhong { IdChiTietThuePhong = 1, IDHoaDon = "HD1", IDPhong = "1P1", /* IdNhanVien = "NV1",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false, DonGia = 3000},
+                new ChiTietThuePhong {IdChiTietThuePhong = 2, IDHoaDon = "HD1", IDPhong = "1P2", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false, DonGia = 2000},
+                new ChiTietThuePhong {IdChiTietThuePhong = 3, IDHoaDon = "HD2", IDPhong = "1P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false, DonGia = 4000},
+                new ChiTietThuePhong {IdChiTietThuePhong = 4, IDHoaDon = "HD3", IDPhong = "2P3", /* IdNhanVien = "NV2",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = false, DonGia = 3000},
+                new ChiTietThuePhong {IdChiTietThuePhong = 5, IDHoaDon = "HD4", IDPhong = "1P1", /*IdNhanVien = "NV3",*/ NgayCheckIn = new DateTime(2022, 07, 07), NgayCheckOut = new DateTime(2022, 07, 08), TrangThai = true, DonGia = 3000},
             });
 
             context.Books.AddRange(new Book[] { 
@@ -107,14 +107,14 @@ namespace PBL3.DAL
 
             context.Phongs.AddRange(new Phong[]
             {
-                    new Phong {IdPhong = "1P1", TenPhong = "101", IdLoaiPhong = "1V", TrangThai = true, DonGiaPhong = "3000"},
-                    new Phong {IdPhong = "1P2", TenPhong = "102", IdLoaiPhong = "2T", TrangThai = true, DonGiaPhong = "2000"},
-                    new Phong {IdPhong = "1P3", TenPhong = "103", IdLoaiPhong = "2V", TrangThai = true, DonGiaPhong = "4000"},
-                    new Phong {IdPhong = "2P1", TenPhong = "201", IdLoaiPhong = "1T", TrangThai = true, DonGiaPhong = "1000"},
-                    new Phong {IdPhong = "2P2", TenPhong = "202", IdLoaiPhong = "2T", TrangThai = true, DonGiaPhong = "2000"},
-                    new Phong {IdPhong = "2P3", TenPhong = "203", IdLoaiPhong = "1V", TrangThai = true, DonGiaPhong = "3000"},
-                    new Phong {IdPhong = "3P1", TenPhong = "301", IdLoaiPhong = "1T", TrangThai = true, DonGiaPhong = "1000"},
-                    new Phong {IdPhong = "3P2", TenPhong = "302", IdLoaiPhong = "1T", TrangThai = true, DonGiaPhong = "1000"},
+                    new Phong {IdPhong = "1P1", TenPhong = "101", IdLoaiPhong = "1V", TrangThai = true, DonGiaPhong = 3000},
+                    new Phong {IdPhong = "1P2", TenPhong = "102", IdLoaiPhong = "2T", TrangThai = true, DonGiaPhong = 2000},
+                    new Phong {IdPhong = "1P3", TenPhong = "103", IdLoaiPhong = "2V", TrangThai = true, DonGiaPhong = 4000},
+                    new Phong {IdPhong = "2P1", TenPhong = "201", IdLoaiPhong = "1T", TrangThai = true, DonGiaPhong = 1000},
+                    new Phong {IdPhong = "2P2", TenPhong = "202", IdLoaiPhong = "2T", TrangThai = true, DonGiaPhong = 2000},
+                    new Phong {IdPhong = "2P3", TenPhong = "203", IdLoaiPhong = "1V", TrangThai = true, DonGiaPhong = 3000},
+                    new Phong {IdPhong = "3P1", TenPhong = "301", IdLoaiPhong = "1T", TrangThai = true, DonGiaPhong = 1000},
+                    new Phong {IdPhong = "3P2", TenPhong = "302", IdLoaiPhong = "1T", TrangThai = true, DonGiaPhong = 1000},
 
 
             });

@@ -85,22 +85,28 @@ namespace PBL3.BLL
             List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong && p.TrangThai == false).ToList();
             foreach (ChiTietSuDungDichVu i in chiTietSuDungDichVus)
             {
-                data.Add(new ThanhToanDichVuView { MaDichVu = i.ID_DichVu, DonGia = i.DichVu.DonGia, 
-                    NgaySuDung = Convert.ToDateTime(i.NgaySuDung), SoLuong = i.SoLuong,
+                data.Add(new ThanhToanDichVuView { 
+                    MaChiTietDV = i.ID_ChiTietSuDungDichVu,
+                    MaDichVu = i.ID_DichVu, 
+                    DonGia = i.DichVu.DonGia, 
+                    NgaySuDung = Convert.ToDateTime(i.NgaySuDung), 
+                    SoLuong = i.SoLuong,
                     TenDichVu = i.DichVu.TenDichVu, TongTien = i.SoLuong * Convert.ToInt32(i.DichVu.DonGia)});
             }
             return data;
         }
 
 
-        public void UpdateChiTietDichVu(string IdDichVu, int SoLuong, string IdPhong, DateTime NgaySuDung) 
+        public void UpdateChiTietDichVu(ThanhToanDichVuView data, string idPhong) 
         {
-            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == IdPhong && p.TrangThai == false).ToList();
+            List<ChiTietSuDungDichVu> chiTietSuDungDichVus = QLKS.Instance.ChiTietSuDungDichVus.Where(p => p.ID_Phong == idPhong && p.TrangThai == false).ToList();
             foreach (ChiTietSuDungDichVu i in chiTietSuDungDichVus)
             {
-                if (i.ID_DichVu == IdDichVu && i.NgaySuDung == NgaySuDung)
+                if (i.ID_ChiTietSuDungDichVu == data.MaChiTietDV)
                 {
-                    i.SoLuong = SoLuong;
+                    i.SoLuong = data.SoLuong;
+                    i.ID_DichVu = data.MaDichVu;
+                    i.NgaySuDung = data.NgaySuDung;
                 }
             }
             QLKS.Instance.SaveChanges();

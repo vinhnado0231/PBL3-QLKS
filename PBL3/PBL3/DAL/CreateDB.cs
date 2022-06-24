@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace PBL3.DAL
 {
     public class CreateDB:
-                    CreateDatabaseIfNotExists<QLKS>
+                    DropCreateDatabaseAlways<QLKS>
     //CreateDatabaseIfNotExists<QLKS>
 
 

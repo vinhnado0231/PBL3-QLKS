@@ -104,17 +104,26 @@ namespace PBL3.VIEW
 
         private void btnXoaDV_Click(object sender, EventArgs e)
         {
-            if (dataGridView.SelectedRows.Count > 0)
+            try
             {
-                List<ThanhToanDichVuView> data = new List<ThanhToanDichVuView>();
-                foreach (DataGridViewRow row in dataGridView.SelectedRows)
+                if (dataGridView.SelectedRows.Count > 0)
                 {
-                    data.Add((ThanhToanDichVuView)row.DataBoundItem);
+                    List<ThanhToanDichVuView> data = new List<ThanhToanDichVuView>();
+                    foreach (DataGridViewRow row in dataGridView.SelectedRows)
+                    {
+                        data.Add((ThanhToanDichVuView)row.DataBoundItem);
+                    }
+                    ThanhToanHoaDon_BLL.Instance.DelChiTietDichVu(data, IdPhong);
+                    this.btnDatLaiTxt_Click(sender, e);
+                    ShowView();
                 }
-                ThanhToanHoaDon_BLL.Instance.DelChiTietDichVu(data, IdPhong);
+
             }
-            this.btnDatLaiTxt_Click(sender, e);
-            ShowView();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xóa thất bại");
+            }
+
 
         }
 
@@ -127,21 +136,29 @@ namespace PBL3.VIEW
                     MessageBox.Show("Lỗi nhập thông tin");
                     return;
                 }
+
                 if (ThanhToanHoaDon_BLL.Instance.checkData(((CBBItem)cbbTenDV.SelectedItem).Value, dateTimePicker1.Value))
                 {
                     MessageBox.Show("Dịch vụ đã có trong danh sách");
                     return;
                 }
-
-                ThanhToanHoaDon_BLL.Instance.AddChiTietDichVu(new ChiTietSuDungDichVu
+                try
                 {
-                    ID_Phong = IdPhong.ToString(),
-                    ID_DichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString(),
-                    ID_HoaDon = ThanhToanHoaDon_BLL.Instance.GetHoaDonByIdPhong(IdPhong).IdHoaDon.ToString(),
-                    NgaySuDung = Convert.ToDateTime(dateTimePicker1.Value.Date),
-                    SoLuong = Convert.ToInt32(txtSoLuong.Text),
-                    TrangThai = false,
-                });
+                    ThanhToanHoaDon_BLL.Instance.AddChiTietDichVu(new ChiTietSuDungDichVu
+                    {
+                        ID_Phong = IdPhong.ToString(),
+                        ID_DichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString(),
+                        ID_HoaDon = ThanhToanHoaDon_BLL.Instance.GetHoaDonByIdPhong(IdPhong).IdHoaDon.ToString(),
+                        NgaySuDung = Convert.ToDateTime(dateTimePicker1.Value.Date),
+                        SoLuong = Convert.ToInt32(txtSoLuong.Text),
+                        TrangThai = false,
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thêm thất bại");
+                }
+
                 btnDatLaiTxt_Click(sender, e);
                 ShowView();
             }
@@ -153,16 +170,23 @@ namespace PBL3.VIEW
 
         private void btnEditDV_Click(object sender, EventArgs e)
         {
-            if (dataGridView.SelectedRows.Count == 1)
+            try
             {
-                ThanhToanDichVuView data = (ThanhToanDichVuView)dataGridView.SelectedRows[0].DataBoundItem;
-                data.MaDichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString();
-                data.SoLuong = Convert.ToInt32(txtSoLuong.Text);
-                data.NgaySuDung = Convert.ToDateTime(dateTimePicker1.Value.Date);
-                ThanhToanHoaDon_BLL.Instance.UpdateChiTietDichVu(data, IdPhong);
-                ShowView();
-                btnDatLaiTxt_Click(sender, e);
+                if (dataGridView.SelectedRows.Count == 1)
+                {
+                    ThanhToanDichVuView data = (ThanhToanDichVuView)dataGridView.SelectedRows[0].DataBoundItem;
+                    data.MaDichVu = ((CBBItem)cbbTenDV.SelectedItem).Value.ToString();
+                    data.SoLuong = Convert.ToInt32(txtSoLuong.Text);
+                    data.NgaySuDung = Convert.ToDateTime(dateTimePicker1.Value.Date);
+                    ThanhToanHoaDon_BLL.Instance.UpdateChiTietDichVu(data, IdPhong);
+                    ShowView();
+                    btnDatLaiTxt_Click(sender, e);
+                }
             }
+            catch (Exception ex) {
+                MessageBox.Show("Sửa thất bại");
+            }
+
 
         }
 
